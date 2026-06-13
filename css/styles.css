@@ -1,0 +1,559 @@
+/* Hallmark · genre: editorial · macrostructure: narrative-workflow · theme: custom (hyper-flat muted earth-tone faceless) · enrichment: B · nav: N9 · footer: Ft5
+ * pre-emit critique: P5 H4 E5 S5 R5 V5
+ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  overflow-x: clip;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+p { max-width: var(--measure); }
+em { font-style: italic; color: var(--color-ink-2); }
+
+a { color: inherit; }
+
+::selection { background: var(--color-accent); color: var(--color-paper); }
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ─── NAV ─────────────────────────────────────────────────── */
+.nav {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  padding: var(--space-lg) clamp(1.25rem, 5vw, 5rem);
+  border-bottom: var(--rule-w) solid var(--color-rule);
+}
+.nav__mark {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nav__links {
+  display: flex;
+  gap: clamp(0.75rem, 2.5vw, 1.75rem);
+  flex-wrap: wrap;
+}
+.nav__links a {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-ink-2);
+  white-space: nowrap;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.nav__links a:hover { color: var(--color-accent); }
+
+/* ─── HERO ────────────────────────────────────────────────── */
+.hero {
+  padding: clamp(3rem, 9vw, var(--space-4xl)) clamp(1.25rem, 5vw, 5rem) var(--space-3xl);
+  display: grid;
+  gap: var(--space-lg);
+  max-width: 1280px;
+}
+.hero__kicker {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--color-accent-ink);
+  margin: 0;
+}
+.hero__title {
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  margin: 0;
+  max-width: 16ch;
+}
+.hero__lede {
+  font-size: var(--text-lg);
+  line-height: 1.5;
+  color: var(--color-ink-2);
+  margin: var(--space-sm) 0 0;
+  max-width: 54ch;
+}
+.hero__art {
+  margin: var(--space-xl) 0 0;
+  max-width: 720px;
+}
+.art--hero { width: 100%; height: auto; }
+
+/* CTA — typographic, editorial */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: fit-content;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  padding: var(--space-xs) 0;
+  border-bottom: 2px solid var(--color-accent);
+  color: var(--color-ink);
+  transition: gap var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+.cta:hover { gap: var(--space-md); color: var(--color-accent); }
+.cta__arrow { transition: transform var(--dur-mid) var(--ease-out); }
+.cta:hover .cta__arrow { transform: translateY(3px); }
+
+/* ─── STAGE (narrative workflow) ──────────────────────────── */
+.stage {
+  padding: var(--space-3xl) clamp(1.25rem, 5vw, 5rem);
+  max-width: 1280px;
+}
+.stage__rule {
+  border: 0;
+  border-top: 3px solid var(--color-ink);
+  margin: 0 0 var(--space-xl);
+}
+.stage__grid {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr) minmax(0, 0.85fr);
+  gap: clamp(1.5rem, 4vw, var(--space-2xl));
+  align-items: start;
+}
+.stage__grid--full { grid-template-columns: 7rem minmax(0, 1fr); }
+
+.stage__label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  position: sticky;
+  top: var(--space-lg);
+}
+.stage__num {
+  font-family: var(--font-mono);
+  font-size: var(--text-xl);
+  font-weight: 500;
+  color: var(--color-accent);
+  line-height: 1;
+}
+.stage__name {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--color-ink-3);
+}
+.stage__head {
+  font-size: var(--text-2xl);
+  margin: 0 0 var(--space-lg);
+  max-width: 18ch;
+}
+.stage__body p { margin: 0 0 var(--space-md); }
+.stage__body--wide { max-width: none; }
+.stage__body--wide p { max-width: 60ch; }
+
+.stage__art {
+  margin: 0;
+  align-self: center;
+}
+.art { width: 100%; height: auto; display: block; }
+.art-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  fill: var(--color-ink);
+  text-anchor: middle;
+  letter-spacing: 0.02em;
+}
+
+/* lock-up lists */
+.lockup, .flow {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-md);
+  display: grid;
+  gap: var(--space-sm);
+  max-width: var(--measure);
+}
+.lockup li {
+  padding-left: var(--space-md);
+  border-left: 2px solid var(--color-accent);
+}
+.lockup strong, .flow span { font-family: var(--font-display); font-weight: 700; }
+.lockup strong { color: var(--color-ink); }
+
+.flow { counter-reset: step; }
+.flow li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 2.4rem;
+  min-height: 1.5rem;
+}
+.flow li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+  border: 1px solid var(--color-rule);
+  border-radius: 50%;
+  width: 1.5rem; height: 1.5rem;
+  display: grid; place-items: center;
+}
+.flow span { color: var(--color-accent-ink); }
+
+/* ─── PRACTICE / concrete examples ────────────────────────── */
+.practice { max-width: 1280px; }
+.layer { margin: var(--space-2xl) clamp(1.25rem, 5vw, 5rem) 0; }
+.layer:first-of-type { margin-top: var(--space-2xl); }
+.layer__head {
+  font-size: var(--text-lg);
+  font-weight: 500;
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin: 0 0 var(--space-lg);
+  color: var(--color-ink-2);
+}
+.layer__tag {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-paper);
+  background: var(--color-slate-2);
+  padding: 0.25em 0.7em;
+  border-radius: 2px;
+}
+.layer__tag--accent { background: var(--color-accent); }
+
+.inline-mine {
+  font-family: var(--font-mono);
+  font-size: 0.72em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-accent-ink);
+  border: 1px solid var(--color-accent);
+  border-radius: 2px;
+  padding: 0.05em 0.4em;
+  white-space: nowrap;
+}
+
+/* ─── Context-layer cycle (Capture → Experience) ──────────── */
+.cstages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+}
+.cstage {
+  display: grid;
+  grid-template-columns: 12rem minmax(0, 1fr);
+  gap: clamp(1rem, 3vw, var(--space-2xl));
+  align-items: start;
+  padding: var(--space-lg) 0;
+  border-top: var(--rule-w) solid var(--color-rule);
+}
+.cstage:last-child { border-bottom: var(--rule-w) solid var(--color-rule); }
+.cstage__head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+}
+.cstage__num {
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  color: var(--color-accent);
+}
+.cstage__name {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.cstage__desc {
+  font-size: var(--text-sm);
+  color: var(--color-ink-2);
+  margin: 0 0 var(--space-md);
+  max-width: 56ch;
+}
+.cstage--loop .cstage__desc { margin-bottom: var(--space-sm); }
+.cstage__return {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+  color: var(--color-accent-ink);
+  margin: 0;
+  max-width: none;
+}
+.cstage__return strong { font-weight: 500; }
+
+.chips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: var(--color-ink);
+  background: var(--color-paper-2);
+  border: var(--rule-w) solid var(--color-rule);
+  border-radius: 3px;
+  padding: 0.35em 0.7em;
+  transition: border-color var(--dur-fast) var(--ease-out),
+              color var(--dur-fast) var(--ease-out);
+}
+.chip:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.chip--mine::before {
+  content: "";
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background: var(--color-accent);
+  flex: none;
+}
+
+.cards {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: var(--space-lg);
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+  background: var(--color-paper-2);
+  border: var(--rule-w) solid var(--color-rule);
+  border-radius: 4px;
+  transition: transform var(--dur-mid) var(--ease-out), border-color var(--dur-mid) var(--ease-out);
+}
+.card:hover { transform: translateY(-3px); border-color: var(--color-accent); }
+.card__name {
+  font-size: var(--text-lg);
+  margin: 0;
+}
+.card__desc { font-size: var(--text-sm); color: var(--color-ink-2); margin: 0; flex: 1; max-width: none; }
+.card__link {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: var(--color-accent-ink);
+  width: fit-content;
+}
+.card__link:hover { text-decoration: underline; }
+
+/* ─── FOOTER ──────────────────────────────────────────────── */
+.foot {
+  padding: var(--space-3xl) clamp(1.25rem, 5vw, 5rem) var(--space-2xl);
+  max-width: 1280px;
+}
+.foot__statement {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--text-3xl);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--space-2xl);
+  max-width: 20ch;
+}
+.foot__meta {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-ink-3);
+  max-width: none;
+}
+
+/* ─── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .stage,
+  .foot { padding-top: var(--space-2xl); padding-bottom: var(--space-2xl); }
+  .stage__grid,
+  .stage__grid--full {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  .stage__label {
+    position: static;
+    flex-direction: row;
+    align-items: baseline;
+    gap: var(--space-sm);
+  }
+  .stage__art { max-width: 20rem; order: 3; margin-top: var(--space-sm); }
+  .cstage { grid-template-columns: 1fr; gap: var(--space-sm); }
+}
+
+/* ═══ MOTION · interface-craft storyboard ═════════════════════
+ *    reveal sequence (per [data-reveal] section)
+ *      0ms   hidden — opacity 0, translateY 24px
+ *    enter   when 12% into viewport, IntersectionObserver adds .in
+ *    +0ms    section fades + rises over --dur-slow
+ *    +120ms  art draws in (loops/quads/walkers stagger)
+ * ═══════════════════════════════════════════════════════════ */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--dur-slow) var(--ease-out),
+              transform var(--dur-slow) var(--ease-out);
+}
+[data-reveal].in { opacity: 1; transform: none; }
+
+/* art element entrances, gated on parent .in */
+.in .walker, .in .node, .in .q, .in .agent, .in .rider {
+  animation: pop var(--dur-mid) var(--ease-out) backwards;
+}
+.in .walker:nth-child(1) { animation-delay: 120ms; }
+.in .walker:nth-child(2) { animation-delay: 240ms; }
+.in .walker:nth-child(3) { animation-delay: 360ms; }
+.in .walker:nth-child(4) { animation-delay: 480ms; }
+.in .q:nth-child(1) { animation-delay: 120ms; }
+.in .q:nth-child(2) { animation-delay: 220ms; }
+.in .q:nth-child(3) { animation-delay: 320ms; }
+.in .q:nth-child(4) { animation-delay: 420ms; }
+.in .agent:nth-child(1) { animation-delay: 160ms; }
+.in .agent:nth-child(2) { animation-delay: 300ms; }
+.in .agent:nth-child(3) { animation-delay: 440ms; }
+.in .rider--b { animation-delay: 200ms; }
+
+.in .loop-arc, .in .ring {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: draw var(--dur-slow) var(--ease-in-out) forwards;
+}
+.in .ring--mid { animation-delay: 160ms; }
+.in .ring--inner { animation-delay: 320ms; }
+
+@keyframes pop {
+  from { opacity: 0; transform: scale(0.82); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes draw { to { stroke-dashoffset: 0; } }
+
+/* context rings drift slowly to feel alive */
+.in .art--context .ring--mid   { transform-box: fill-box; transform-origin: center; animation: draw var(--dur-slow) var(--ease-in-out) 160ms forwards, spin 60s linear 1s infinite; }
+.in .art--context .ring--inner { transform-box: fill-box; transform-origin: center; animation: draw var(--dur-slow) var(--ease-in-out) 320ms forwards, spin 38s linear reverse 1s infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ═══ AMBIENT + INTERACTIVE · the figures stay alive ══════════
+ *  Each illustration keeps a slow idle loop, then energises on
+ *  hover. Pointer parallax (js/parallax.js) nudges depth layers
+ *  toward the cursor. All of it dies under prefers-reduced-motion.
+ *
+ *   hero     wheels turn (2.8s) · sun breathes (4s) · hover → fast
+ *   why      ring marches · hover → faster march
+ *   moat     a pulse rides the loop (4.5s) · hover → faster
+ *   people   intent flows down the dashed lines · hover → faster
+ *   agents   centre eye scans · hover → quads lift
+ *   context  four loop-dots pulse in sequence
+ * ═══════════════════════════════════════════════════════════ */
+[data-parallax] { cursor: default; }
+[data-depth] { transition: transform var(--dur-mid) var(--ease-out); will-change: transform; }
+
+/* hero — turning wheels + breathing sun */
+.spoke { stroke: var(--color-navy); stroke-width: 4; stroke-linecap: round; }
+.wheel { transform-box: fill-box; transform-origin: center; }
+.in .art--hero .wheel { animation: spin 2.8s linear infinite; }
+.art--hero:hover .wheel { animation-duration: 0.85s; }
+.sun { transform-box: fill-box; transform-origin: center; }
+.in .art--hero .sun { animation: breathe 4s var(--ease-in-out) infinite; }
+@keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.07); } }
+
+/* why — marching ring */
+.in .art--why .whyring { animation: march 7s linear infinite; }
+.art--why:hover .whyring { animation-duration: 2.2s; }
+@keyframes march { to { stroke-dashoffset: -120; } }
+
+/* moat — pulse riding the loop */
+.loop-pulse {
+  offset-path: path("M160 60 A100 100 0 1 1 160 260 A100 100 0 1 1 160 60 Z");
+  offset-rotate: 0deg;
+  offset-distance: 0%;
+  filter: drop-shadow(0 0 0 transparent);
+}
+.in .art--moat .loop-pulse { animation: travel 5s linear infinite; }
+.art--moat:hover .loop-pulse { animation-duration: 1.8s; }
+@keyframes travel { to { offset-distance: 100%; } }
+
+/* people — intent flowing along the dashed lines */
+.in .art--people .flow-lines line { animation: flow 1.6s linear infinite; }
+.art--people:hover .flow-lines line { animation-duration: 0.55s; }
+@keyframes flow { to { stroke-dashoffset: -90; } }
+
+/* agents — scanning eye + quads that lift on hover */
+.eye { transform-box: fill-box; transform-origin: center; }
+.in .art--agents .eye { animation: scan 5s var(--ease-in-out) infinite; }
+@keyframes scan { 0%, 100% { transform: translateX(-5px); } 50% { transform: translateX(5px); } }
+.q { transform-box: fill-box; transform-origin: center; transition: transform var(--dur-fast) var(--ease-out); }
+.art--agents:hover .q { transform: scale(1.06); }
+
+/* context — loop dots pulsing in sequence */
+.cdot { transform-box: fill-box; transform-origin: center; }
+.in .art--context .cdot { animation: dotpulse 3.2s var(--ease-in-out) infinite; }
+.in .art--context .cdot:nth-child(2) { animation-delay: 0.4s; }
+.in .art--context .cdot:nth-child(3) { animation-delay: 0.8s; }
+.in .art--context .cdot:nth-child(4) { animation-delay: 1.2s; }
+@keyframes dotpulse {
+  0%, 100% { transform: scale(1);   opacity: 0.85; }
+  50%      { transform: scale(1.4); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, [data-reveal] {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+}

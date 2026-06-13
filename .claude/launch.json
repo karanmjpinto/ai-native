@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ai-native",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "4753"],
+      "port": 4753
+    }
+  ]
+}

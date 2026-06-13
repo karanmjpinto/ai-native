@@ -1,0 +1,68 @@
+/* Hallmark · custom theme tokens
+ * axes: light · geometric-sans · chromatic-terracotta (~38°)
+ * vibe: hyper-flat, muted earth-tone, faceless, calm
+ */
+
+:root {
+  /* ── Paper (cream, tinted toward terracotta) ───────────── */
+  --color-paper:   oklch(95% 0.018 75);
+  --color-paper-2: oklch(92% 0.020 75);
+  --color-paper-3: oklch(88% 0.022 70);
+
+  /* ── Ink (warm near-black, never pure) ─────────────────── */
+  --color-ink:     oklch(24% 0.016 55);
+  --color-ink-2:   oklch(42% 0.018 55);
+  --color-ink-3:   oklch(58% 0.016 55);
+
+  /* ── Accent (terracotta) — held under 5% of any viewport ─ */
+  --color-accent:     oklch(60% 0.14 38);
+  --color-accent-ink: oklch(48% 0.13 36);
+
+  /* ── Figure palette (faceless illustration only) ───────── */
+  --color-slate:   oklch(56% 0.062 250);
+  --color-slate-2: oklch(46% 0.058 252);
+  --color-navy:    oklch(34% 0.045 255);
+  --color-clay:    oklch(67% 0.10 45);
+  --color-sand:    oklch(83% 0.045 70);
+
+  /* ── Hairline ──────────────────────────────────────────── */
+  --color-rule:    oklch(78% 0.020 65);
+
+  --color-focus:   oklch(52% 0.13 38);
+
+  /* ── Type ──────────────────────────────────────────────── */
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-body:    "Newsreader", Georgia, "Times New Roman", serif;
+  --font-mono:    "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* fluid type scale */
+  --text-xs:   clamp(0.75rem, 0.72rem + 0.15vw, 0.84rem);
+  --text-sm:   clamp(0.875rem, 0.84rem + 0.18vw, 0.97rem);
+  --text-base: clamp(1rem, 0.96rem + 0.22vw, 1.13rem);
+  --text-lg:   clamp(1.2rem, 1.12rem + 0.4vw, 1.4rem);
+  --text-xl:   clamp(1.5rem, 1.35rem + 0.75vw, 2rem);
+  --text-2xl:  clamp(2rem, 1.7rem + 1.5vw, 3rem);
+  --text-3xl:  clamp(2.75rem, 2.1rem + 3.2vw, 5rem);
+  --text-4xl:  clamp(2.6rem, 1.6rem + 5vw, 7.5rem);
+
+  /* ── Spacing (4-pt) ────────────────────────────────────── */
+  --space-2xs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  0.75rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 7rem;
+  --space-4xl: 11rem;
+
+  --measure: 62ch;
+  --rule-w: 1px;
+
+  /* ── Motion ────────────────────────────────────────────── */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 180ms;
+  --dur-mid:  420ms;
+  --dur-slow: 720ms;
+}

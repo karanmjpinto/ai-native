@@ -1,0 +1,16 @@
+{
+  "runs": [
+    {
+      "date": "2026-06-13",
+      "brief": "AI-native organisation field guide — single page",
+      "genre": "editorial",
+      "macrostructure": "narrative-workflow",
+      "theme": "custom",
+      "vibe": "hyper-flat, muted earth-tone, faceless, calm",
+      "nav": "N9",
+      "footer": "Ft5",
+      "enrichment": "B",
+      "fonts": { "display": "Bricolage Grotesque", "body": "Newsreader", "mono": "Geist Mono" }
+    }
+  ]
+}

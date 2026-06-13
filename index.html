@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-Native — Redesign the work, not just the worker</title>
+  <meta name="description" content="Adding AI changes nothing until you redesign the work around it. A field guide to building an AI-native organisation: why, the moat, people, agents, and context." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,500;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ─── NAV · N9 edge-aligned minimal ─────────────────────── -->
+  <header class="nav">
+    <a class="nav__mark" href="#top">AI&#8202;·&#8202;NATIVE</a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="#why">Why</a>
+      <a href="#moat">Moat</a>
+      <a href="#people">People</a>
+      <a href="#agents">Agents</a>
+      <a href="#context">Context</a>
+      <a href="#practice">In&nbsp;practice</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ─── HERO · H9 illustration centrepiece ──────────────── -->
+    <section class="hero" data-reveal>
+      <p class="hero__kicker">A field guide</p>
+      <h1 class="hero__title">
+        Adding AI changes nothing until you redesign the&nbsp;work.
+      </h1>
+      <p class="hero__lede">
+        The first electric factories bolted a motor onto a steam-era floor and saw
+        no gain at all. The payoff came decades later, when owners tore up the
+        layout and built around the motor. AI is at that same moment now. This is a
+        short guide to the rebuild.
+      </p>
+
+      <figure class="hero__art" aria-hidden="true">
+        <!-- two faceless riders, flat cel-vinyl · wheels turn, sun breathes -->
+        <svg viewBox="0 0 720 360" role="img" class="art art--hero" data-parallax>
+          <!-- ground -->
+          <rect x="0" y="300" width="720" height="4" fill="var(--color-rule)" />
+
+          <!-- sun disc -->
+          <circle cx="620" cy="86" r="40" fill="var(--color-sand)" class="sun" data-depth="3" />
+
+          <!-- rider one (slate) -->
+          <g class="rider rider--a" data-depth="1.5">
+            <g class="wheel"><circle cx="150" cy="252" r="34" fill="none" stroke="var(--color-navy)" stroke-width="9" /><line class="spoke" x1="150" y1="222" x2="150" y2="282" /><line class="spoke" x1="120" y1="252" x2="180" y2="252" /></g>
+            <g class="wheel"><circle cx="266" cy="252" r="34" fill="none" stroke="var(--color-navy)" stroke-width="9" /><line class="spoke" x1="266" y1="222" x2="266" y2="282" /><line class="spoke" x1="236" y1="252" x2="296" y2="252" /></g>
+            <path d="M150 252 L208 252 L240 200 L266 252" fill="none" stroke="var(--color-slate)" stroke-width="9" stroke-linejoin="round" stroke-linecap="round" />
+            <path d="M208 252 L208 178" stroke="var(--color-slate)" stroke-width="9" stroke-linecap="round" />
+            <!-- body -->
+            <path d="M208 178 L196 138" stroke="var(--color-slate-2)" stroke-width="13" stroke-linecap="round" />
+            <path d="M196 142 L240 200" stroke="var(--color-slate-2)" stroke-width="11" stroke-linecap="round" />
+            <circle cx="190" cy="116" r="20" fill="var(--color-slate-2)" />
+          </g>
+
+          <!-- rider two (terracotta) -->
+          <g class="rider rider--b" data-depth="2.4">
+            <g class="wheel"><circle cx="430" cy="252" r="34" fill="none" stroke="var(--color-navy)" stroke-width="9" /><line class="spoke" x1="430" y1="222" x2="430" y2="282" /><line class="spoke" x1="400" y1="252" x2="460" y2="252" /></g>
+            <g class="wheel"><circle cx="546" cy="252" r="34" fill="none" stroke="var(--color-navy)" stroke-width="9" /><line class="spoke" x1="546" y1="222" x2="546" y2="282" /><line class="spoke" x1="516" y1="252" x2="576" y2="252" /></g>
+            <path d="M430 252 L488 252 L520 200 L546 252" fill="none" stroke="var(--color-clay)" stroke-width="9" stroke-linejoin="round" stroke-linecap="round" />
+            <path d="M488 252 L488 178" stroke="var(--color-clay)" stroke-width="9" stroke-linecap="round" />
+            <path d="M488 178 L476 138" stroke="var(--color-accent)" stroke-width="13" stroke-linecap="round" />
+            <path d="M476 142 L520 200" stroke="var(--color-accent)" stroke-width="11" stroke-linecap="round" />
+            <circle cx="470" cy="116" r="20" fill="var(--color-accent)" />
+          </g>
+        </svg>
+      </figure>
+
+      <a class="cta" href="#why">
+        <span>Read the guide</span>
+        <span class="cta__arrow" aria-hidden="true">&#8595;</span>
+      </a>
+    </section>
+
+    <!-- ─── 1.0 WHY ─────────────────────────────────────────── -->
+    <section class="stage" id="why" data-reveal>
+      <hr class="stage__rule" />
+      <div class="stage__grid">
+        <div class="stage__label">
+          <span class="stage__num">1.0</span>
+          <span class="stage__name">Why</span>
+        </div>
+        <div class="stage__body">
+          <h2 class="stage__head">A faster version of yesterday is not the goal.</h2>
+          <p>
+            Bolt AI onto the way you work today and you get exactly that: yesterday,
+            run a little quicker. The org chart, the hand-offs, the meetings — all of
+            it was built for people doing the work by hand. Speeding up a process that
+            shouldn't exist is not progress.
+          </p>
+          <p>
+            The gain shows up when you ask a harder question. Not <em>"where can AI
+            save us time?"</em> but <em>"if machines can do the doing, what should the
+            work even be?"</em> That is the rebuild. Everything below is how to start it.
+          </p>
+        </div>
+        <figure class="stage__art" aria-hidden="true">
+          <svg viewBox="0 0 320 320" class="art art--why" data-parallax>
+            <circle class="whyring" cx="160" cy="160" r="120" fill="none" stroke="var(--color-rule)" stroke-width="2" stroke-dasharray="4 8" />
+            <!-- four walking figures around a ring, each a little more upright -->
+            <g class="walkers" data-depth="2">
+              <g transform="translate(160 40)" class="walker"><circle r="13" fill="var(--color-slate)"/><rect x="-5" y="13" width="10" height="30" rx="5" fill="var(--color-slate-2)"/></g>
+              <g transform="translate(280 160)" class="walker"><circle r="13" fill="var(--color-slate)"/><rect x="-5" y="13" width="10" height="32" rx="5" fill="var(--color-slate-2)"/></g>
+              <g transform="translate(160 280)" class="walker"><circle r="13" fill="var(--color-clay)"/><rect x="-5" y="13" width="10" height="34" rx="5" fill="var(--color-accent)"/></g>
+              <g transform="translate(40 160)" class="walker"><circle r="13" fill="var(--color-slate)"/><rect x="-5" y="13" width="10" height="28" rx="5" fill="var(--color-slate-2)"/></g>
+            </g>
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ─── 2.0 MOAT ────────────────────────────────────────── -->
+    <section class="stage" id="moat" data-reveal>
+      <hr class="stage__rule" />
+      <div class="stage__grid">
+        <div class="stage__label">
+          <span class="stage__num">2.0</span>
+          <span class="stage__name">Moat</span>
+        </div>
+        <div class="stage__body">
+          <h2 class="stage__head">Your moat is a loop, not a tool.</h2>
+          <p>
+            A rival can buy the same model and copy your best feature by Friday. What
+            they can't copy is how fast you learn. That speed comes from a loop with
+            three parts, each feeding the next.
+          </p>
+          <ul class="lockup">
+            <li><strong>System.</strong> Build something that reliably ships work, not slides about work.</li>
+            <li><strong>Speed.</strong> Ship it faster than anyone else can — small, often, in the open.</li>
+            <li><strong>Signal.</strong> Read what shipping taught you, then feed it back to the system.</li>
+          </ul>
+          <p>
+            Each turn of the loop makes the next turn quicker. Run it long enough and
+            the gap stops being a gap. It becomes a moat.
+          </p>
+        </div>
+        <figure class="stage__art" aria-hidden="true">
+          <svg viewBox="0 0 320 320" class="art art--moat" data-parallax>
+            <g fill="none" stroke-width="2.5" stroke-linecap="round">
+              <path class="loop-arc" d="M160 60 A100 100 0 0 1 246 210" stroke="var(--color-slate)" />
+              <path class="loop-arc" d="M246 210 A100 100 0 0 1 74 210" stroke="var(--color-clay)" />
+              <path class="loop-arc" d="M74 210 A100 100 0 0 1 160 60" stroke="var(--color-slate-2)" />
+            </g>
+            <!-- a pulse travels the loop, never stopping -->
+            <circle class="loop-pulse" r="7" fill="var(--color-accent)" />
+            <g class="node" data-depth="1.5"><circle cx="160" cy="60" r="30" fill="var(--color-paper-3)" stroke="var(--color-navy)" stroke-width="2.5"/><text x="160" y="64" class="art-label">System</text></g>
+            <g class="node" data-depth="1.5"><circle cx="246" cy="210" r="30" fill="var(--color-paper-3)" stroke="var(--color-navy)" stroke-width="2.5"/><text x="246" y="214" class="art-label">Speed</text></g>
+            <g class="node" data-depth="1.5"><circle cx="74" cy="210" r="30" fill="var(--color-accent)" stroke="var(--color-accent-ink)" stroke-width="2.5"/><text x="74" y="214" class="art-label" fill="var(--color-paper)">Signal</text></g>
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ─── 3.0 PEOPLE ──────────────────────────────────────── -->
+    <section class="stage" id="people" data-reveal>
+      <hr class="stage__rule" />
+      <div class="stage__grid">
+        <div class="stage__label">
+          <span class="stage__num">3.0</span>
+          <span class="stage__name">People</span>
+        </div>
+        <div class="stage__body">
+          <h2 class="stage__head">Everyone becomes a manager.</h2>
+          <p>
+            When agents handle the execution, people move up a level. You stop doing
+            the task yourself and start directing it — the way a good manager directs a
+            team. The skill that matters is no longer how fast you type. It's how
+            clearly you can hand off intent.
+          </p>
+          <ul class="lockup">
+            <li><strong>Strategy.</strong> Decide what's worth doing, and what isn't.</li>
+            <li><strong>Execution.</strong> Hand the agent enough context to act without you.</li>
+            <li><strong>Judgement.</strong> Check the work, catch what's wrong, own the call.</li>
+          </ul>
+        </div>
+        <figure class="stage__art" aria-hidden="true">
+          <svg viewBox="0 0 320 320" class="art art--people" data-parallax>
+            <!-- intent flows along dashed lines from director to agents -->
+            <g class="flow-lines" stroke="var(--color-rule)" stroke-width="2" stroke-dasharray="3 6">
+              <line x1="110" y1="150" x2="190" y2="98"/>
+              <line x1="110" y1="170" x2="190" y2="166"/>
+              <line x1="110" y1="190" x2="190" y2="234"/>
+            </g>
+            <!-- one larger faceless figure directing three small agents -->
+            <g class="director" data-depth="1">
+              <circle cx="80" cy="120" r="26" fill="var(--color-accent)" />
+              <rect x="58" y="146" width="44" height="80" rx="22" fill="var(--color-clay)" />
+            </g>
+            <g class="agents-row" data-depth="2.4">
+              <g class="agent"><rect x="190" y="70" width="56" height="56" rx="12" fill="var(--color-slate)"/><circle cx="218" cy="98" r="9" fill="var(--color-paper)"/></g>
+              <g class="agent"><rect x="190" y="138" width="56" height="56" rx="12" fill="var(--color-slate-2)"/><circle cx="218" cy="166" r="9" fill="var(--color-paper)"/></g>
+              <g class="agent"><rect x="190" y="206" width="56" height="56" rx="12" fill="var(--color-navy)"/><circle cx="218" cy="234" r="9" fill="var(--color-paper)"/></g>
+            </g>
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ─── 4.0 AGENTS ──────────────────────────────────────── -->
+    <section class="stage" id="agents" data-reveal>
+      <hr class="stage__rule" />
+      <div class="stage__grid">
+        <div class="stage__label">
+          <span class="stage__num">4.0</span>
+          <span class="stage__name">Agents</span>
+        </div>
+        <div class="stage__body">
+          <h2 class="stage__head">An agent is only as good as four things.</h2>
+          <p>
+            Autonomy isn't magic. An agent you can actually trust to run on its own
+            stands on four legs. Get all four right and you can step back. Miss one and
+            you're back to doing the work yourself.
+          </p>
+          <ul class="lockup lockup--quad">
+            <li><strong>Goals.</strong> A clear outcome it's working toward.</li>
+            <li><strong>Skills.</strong> The know-how to pursue that outcome.</li>
+            <li><strong>Tools.</strong> The means to actually take action.</li>
+            <li><strong>Context.</strong> Enough of the situation to act well.</li>
+          </ul>
+        </div>
+        <figure class="stage__art" aria-hidden="true">
+          <svg viewBox="0 0 320 320" class="art art--agents" data-parallax>
+            <line x1="160" y1="30" x2="160" y2="290" stroke="var(--color-rule)" stroke-width="2"/>
+            <line x1="30" y1="160" x2="290" y2="160" stroke="var(--color-rule)" stroke-width="2"/>
+            <g class="quad" data-depth="1.4">
+              <rect class="q" x="44" y="44" width="100" height="100" rx="10" fill="var(--color-paper-3)" stroke="var(--color-navy)" stroke-width="2"/>
+              <rect class="q" x="176" y="44" width="100" height="100" rx="10" fill="var(--color-paper-3)" stroke="var(--color-navy)" stroke-width="2"/>
+              <rect class="q" x="44" y="176" width="100" height="100" rx="10" fill="var(--color-paper-3)" stroke="var(--color-navy)" stroke-width="2"/>
+              <rect class="q" x="176" y="176" width="100" height="100" rx="10" fill="var(--color-paper-3)" stroke="var(--color-navy)" stroke-width="2"/>
+              <text x="94" y="98" class="art-label">Goals</text>
+              <text x="226" y="98" class="art-label">Skills</text>
+              <text x="94" y="230" class="art-label">Tools</text>
+              <text x="226" y="230" class="art-label">Context</text>
+            </g>
+            <g class="agent-core" data-depth="3">
+              <circle cx="160" cy="160" r="34" fill="var(--color-accent)"/>
+              <circle class="eye" cx="160" cy="152" r="11" fill="var(--color-paper)"/>
+            </g>
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ─── 5.0 CONTEXT ─────────────────────────────────────── -->
+    <section class="stage" id="context" data-reveal>
+      <hr class="stage__rule" />
+      <div class="stage__grid">
+        <div class="stage__label">
+          <span class="stage__num">5.0</span>
+          <span class="stage__name">Context</span>
+        </div>
+        <div class="stage__body">
+          <h2 class="stage__head">Context is the engine, and it runs in a loop.</h2>
+          <p>
+            Of the four legs, context is the one that compounds. It isn't a file you
+            write once. It's a cycle the whole organisation runs, and each pass leaves
+            the next agent a little smarter.
+          </p>
+          <ol class="flow">
+            <li><span>Capture</span> what happens as work is done.</li>
+            <li><span>Curate</span> the small part of it that matters.</li>
+            <li><span>Store</span> it where any agent can reach it.</li>
+            <li><span>Execute</span> the next task on that better footing.</li>
+            <li><span>Experience</span> the result — which becomes the next capture.</li>
+          </ol>
+          <p>
+            Traces from the work and signals from the market both feed back into
+            capture. The loop tightens every cycle. That tightening is the whole game.
+          </p>
+        </div>
+        <figure class="stage__art" aria-hidden="true">
+          <svg viewBox="0 0 320 320" class="art art--context" data-parallax>
+            <g fill="none" stroke-width="2.5">
+              <circle class="ring ring--outer" cx="160" cy="160" r="120" stroke="var(--color-rule)" stroke-dasharray="6 10"/>
+              <circle class="ring ring--mid" cx="160" cy="160" r="80" stroke="var(--color-slate)" stroke-dasharray="6 10"/>
+              <circle class="ring ring--inner" cx="160" cy="160" r="42" stroke="var(--color-accent)" stroke-dasharray="6 10"/>
+            </g>
+            <g data-depth="2">
+              <circle class="cdot" cx="160" cy="40" r="10" fill="var(--color-slate-2)"/>
+              <circle class="cdot" cx="160" cy="80" r="9" fill="var(--color-slate)"/>
+              <circle class="cdot" cx="160" cy="118" r="8" fill="var(--color-accent)"/>
+              <circle class="cdot" cx="160" cy="160" r="14" fill="var(--color-navy)"/>
+            </g>
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ─── 6.0 IN PRACTICE · concrete examples ─────────────── -->
+    <section class="stage practice" id="practice" data-reveal>
+      <hr class="stage__rule" />
+      <div class="stage__grid stage__grid--full">
+        <div class="stage__label">
+          <span class="stage__num">6.0</span>
+          <span class="stage__name">In&nbsp;practice</span>
+        </div>
+        <div class="stage__body stage__body--wide">
+          <h2 class="stage__head">What this looks like, tool by tool.</h2>
+          <p>
+            The context layer isn't one product — it's the five-step loop from above,
+            and each step has tools that do it well. Below, the loop again, with real
+            options at each stage. The ones I lean on are marked <span class="inline-mine">in use</span>; the rest are the strongest alternatives if you're starting out.
+          </p>
+        </div>
+      </div>
+
+      <div class="layer">
+        <h3 class="layer__head"><span class="layer__tag">Context layer</span> The loop, with the tools that run it</h3>
+        <ol class="cstages">
+          <li class="cstage">
+            <div class="cstage__head"><span class="cstage__num">01</span><span class="cstage__name">Capture</span></div>
+            <p class="cstage__desc">Pull the work in from wherever it actually happens — inboxes, chats, apps, databases.</p>
+            <ul class="chips">
+              <li><a class="chip chip--mine" href="https://unipile.com" target="_blank" rel="noopener">Unipile</a></li>
+              <li><a class="chip" href="https://airbyte.com" target="_blank" rel="noopener">Airbyte</a></li>
+              <li><a class="chip" href="https://composio.dev" target="_blank" rel="noopener">Composio</a></li>
+            </ul>
+          </li>
+          <li class="cstage">
+            <div class="cstage__head"><span class="cstage__num">02</span><span class="cstage__name">Curate</span></div>
+            <p class="cstage__desc">Keep the small part that matters and turn it into memory — extracted, deduped, ready to recall.</p>
+            <ul class="chips">
+              <li><a class="chip" href="https://mem0.ai" target="_blank" rel="noopener">Mem0</a></li>
+              <li><a class="chip chip--mine" href="https://supermemory.ai" target="_blank" rel="noopener">SuperMemory</a></li>
+              <li><a class="chip" href="https://getzep.com" target="_blank" rel="noopener">Zep</a></li>
+              <li><a class="chip" href="https://github.com/langchain-ai/langmem" target="_blank" rel="noopener">LangMem</a></li>
+            </ul>
+          </li>
+          <li class="cstage">
+            <div class="cstage__head"><span class="cstage__num">03</span><span class="cstage__name">Store</span></div>
+            <p class="cstage__desc">Hold the embeddings and documents somewhere any agent can reach in a single call.</p>
+            <ul class="chips">
+              <li><a class="chip" href="https://pinecone.io" target="_blank" rel="noopener">Pinecone</a></li>
+              <li><a class="chip" href="https://qdrant.tech" target="_blank" rel="noopener">Qdrant</a></li>
+              <li><a class="chip" href="https://weaviate.io" target="_blank" rel="noopener">Weaviate</a></li>
+              <li><a class="chip chip--mine" href="https://activeloop.ai" target="_blank" rel="noopener">Activeloop</a></li>
+            </ul>
+          </li>
+          <li class="cstage">
+            <div class="cstage__head"><span class="cstage__num">04</span><span class="cstage__name">Execute</span></div>
+            <p class="cstage__desc">Assemble the right context at the right moment and run the task on it.</p>
+            <ul class="chips">
+              <li><a class="chip" href="https://llamaindex.ai" target="_blank" rel="noopener">LlamaIndex</a></li>
+              <li><a class="chip" href="https://langchain.com/langgraph" target="_blank" rel="noopener">LangGraph</a></li>
+              <li><a class="chip" href="https://letta.com" target="_blank" rel="noopener">Letta</a></li>
+            </ul>
+          </li>
+          <li class="cstage cstage--loop">
+            <div class="cstage__head"><span class="cstage__num">05</span><span class="cstage__name">Experience</span></div>
+            <p class="cstage__desc">Whatever the agent does becomes a trace. The memory tools above write that outcome back — so the loop returns to capture, a little smarter each pass.</p>
+            <p class="cstage__return">&#8617; feeds back into <strong>01 Capture</strong></p>
+          </li>
+        </ol>
+      </div>
+
+      <div class="layer">
+        <h3 class="layer__head"><span class="layer__tag layer__tag--accent">Agents layer</span> What acts on the context</h3>
+        <ul class="cards">
+          <li class="card">
+            <h4 class="card__name">Greptile</h4>
+            <p class="card__desc">A code-review agent that reads the whole codebase, not just the diff. It catches the bugs that only show up once you know how the rest of the code is wired — the context layer made to act.</p>
+            <a class="card__link" href="https://greptile.com" target="_blank" rel="noopener">greptile.com &#8599;</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER · Ft5 statement ──────────────────────────── -->
+  <footer class="foot" data-reveal>
+    <hr class="stage__rule" />
+    <p class="foot__statement">
+      Don't hand AI to your old organisation.<br />Build a new one around it.
+    </p>
+    <p class="foot__meta">
+      <span>AI&#8202;·&#8202;Native</span>
+      <span>A field guide &#8212; 2026</span>
+    </p>
+  </footer>
+
+  <script src="js/reveal.js"></script>
+  <script src="js/parallax.js"></script>
+</body>
+</html>
