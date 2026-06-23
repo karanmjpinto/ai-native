@@ -21,6 +21,7 @@
     <nav class="nav__links" aria-label="Sections">
       <a href="#why">Why</a>
       <a href="#moat">Moat</a>
+      <a href="#scarce">Scarce</a>
       <a href="#people">People</a>
       <a href="#agents">Agents</a>
       <a href="#context">Context</a>
@@ -162,12 +163,70 @@
       </div>
     </section>
 
-    <!-- ─── 3.0 PEOPLE ──────────────────────────────────────── -->
-    <section class="stage" id="people" data-reveal>
+    <!-- ─── 3.0 SCARCE · post-agent defensibility ───────────── -->
+    <section class="stage" id="scarce" data-reveal>
       <hr class="stage__rule" />
       <div class="stage__grid">
         <div class="stage__label">
           <span class="stage__num">3.0</span>
+          <span class="stage__name">Scarce</span>
+        </div>
+        <div class="stage__body">
+          <h2 class="stage__head">When intelligence is free, four things stay scarce.</h2>
+          <p>
+            Agents make execution cheap, and before long everyone will have them —
+            the same models, shipping the same features. When the doing costs almost
+            nothing, doing it is no longer where the advantage lives. So the question
+            that outlasts the tools is this: when intelligence is free, what is still
+            hard to get?
+          </p>
+          <ul class="lockup">
+            <li><strong>Context.</strong> What your organisation has learned that no one else can see. Earned from your own work — a rival can't buy it.</li>
+            <li><strong>Attention.</strong> One place people actually come to do the work. Hard to win, harder to hold.</li>
+            <li><strong>Trust.</strong> Being measured on the outcome, not the pitch. Skin in the game, not slideware.</li>
+            <li><strong>Brand.</strong> A reputation that compounds, so each win makes the next one easier.</li>
+          </ul>
+          <p>
+            None of these are the agents. The agents are table stakes now. The moat is
+            everything they can't hand you — and context, the first of the four, is the
+            one you can build on purpose. The rest of this guide is how.
+          </p>
+        </div>
+        <figure class="stage__art" aria-hidden="true">
+          <svg viewBox="0 0 320 320" class="art art--scarce" data-parallax>
+            <!-- commoditised: abundant, evaporating to nothing -->
+            <g class="vanish" data-depth="2.6">
+              <circle cx="70"  cy="64" r="6" fill="var(--color-sand)"/>
+              <circle cx="120" cy="44" r="5" fill="var(--color-sand)"/>
+              <circle cx="180" cy="58" r="6" fill="var(--color-sand)"/>
+              <circle cx="232" cy="40" r="5" fill="var(--color-sand)"/>
+              <circle cx="150" cy="80" r="4" fill="var(--color-sand)"/>
+              <circle cx="250" cy="74" r="6" fill="var(--color-sand)"/>
+            </g>
+            <!-- ground -->
+            <line x1="20" y1="278" x2="300" y2="278" stroke="var(--color-rule)" stroke-width="2"/>
+            <!-- scarce: four pillars standing firm -->
+            <g class="pillars" data-depth="1.2">
+              <rect class="pillar" x="36"  y="150" width="46" height="128" rx="8" fill="var(--color-slate)"/>
+              <rect class="pillar" x="98"  y="120" width="46" height="158" rx="8" fill="var(--color-slate-2)"/>
+              <rect class="pillar" x="160" y="138" width="46" height="140" rx="8" fill="var(--color-clay)"/>
+              <rect class="pillar" x="222" y="108" width="46" height="170" rx="8" fill="var(--color-accent)"/>
+            </g>
+            <text x="59"  y="298" class="art-label">Context</text>
+            <text x="121" y="298" class="art-label">Attention</text>
+            <text x="183" y="298" class="art-label">Trust</text>
+            <text x="245" y="298" class="art-label">Brand</text>
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ─── 4.0 PEOPLE ──────────────────────────────────────── -->
+    <section class="stage" id="people" data-reveal>
+      <hr class="stage__rule" />
+      <div class="stage__grid">
+        <div class="stage__label">
+          <span class="stage__num">4.0</span>
           <span class="stage__name">People</span>
         </div>
         <div class="stage__body">
@@ -175,44 +234,48 @@
           <p>
             When agents handle the execution, people move up a level. You stop doing
             the task yourself and start directing it — the way a good manager directs a
-            team. The skill that matters is no longer how fast you type. It's how
-            clearly you can hand off intent.
+            team. So your hours should move with you: most of them onto strategy and
+            judgement, far fewer on execution. The agents take that part.
           </p>
-          <ul class="lockup">
-            <li><strong>Strategy.</strong> Decide what's worth doing, and what isn't.</li>
-            <li><strong>Execution.</strong> Hand the agent enough context to act without you.</li>
-            <li><strong>Judgement.</strong> Check the work, catch what's wrong, own the call.</li>
+          <ul class="lockup lockup--owned">
+            <li><span class="own own--you">You</span><strong>Strategy.</strong> Decide what's worth doing, and what isn't. Give this more of your time, not less.</li>
+            <li><span class="own own--agent">Agents</span><strong>Execution.</strong> Hand it off with enough context to act without you. This is the part that should shrink.</li>
+            <li><span class="own own--you">You</span><strong>Judgement.</strong> Check the work, catch what's wrong, own the call.</li>
           </ul>
         </div>
         <figure class="stage__art" aria-hidden="true">
           <svg viewBox="0 0 320 320" class="art art--people" data-parallax>
-            <!-- intent flows along dashed lines from director to agents -->
-            <g class="flow-lines" stroke="var(--color-rule)" stroke-width="2" stroke-dasharray="3 6">
-              <line x1="110" y1="150" x2="190" y2="98"/>
-              <line x1="110" y1="170" x2="190" y2="166"/>
-              <line x1="110" y1="190" x2="190" y2="234"/>
+            <!-- where your attention goes: lots on strategy + judgement, little on execution -->
+            <g class="rows" data-depth="1.2">
+              <text x="18" y="58" class="art-label art-label--start">Strategy</text>
+              <rect class="bar" x="16" y="68" width="248" height="28" rx="8" fill="var(--color-slate)"/>
+
+              <text x="18" y="146" class="art-label art-label--start">Judgement</text>
+              <rect class="bar" x="16" y="156" width="224" height="28" rx="8" fill="var(--color-clay)"/>
+
+              <text x="18" y="234" class="art-label art-label--start">Execution</text>
+              <rect class="bar bar--shrink" x="16" y="244" width="58" height="28" rx="8" fill="var(--color-sand)"/>
             </g>
-            <!-- one larger faceless figure directing three small agents -->
-            <g class="director" data-depth="1">
-              <circle cx="80" cy="120" r="26" fill="var(--color-accent)" />
-              <rect x="58" y="146" width="44" height="80" rx="22" fill="var(--color-clay)" />
+            <!-- execution handed off to the agents -->
+            <g class="flow-lines" stroke="var(--color-rule)" stroke-width="2" stroke-dasharray="3 6">
+              <line x1="80" y1="258" x2="196" y2="258"/>
             </g>
             <g class="agents-row" data-depth="2.4">
-              <g class="agent"><rect x="190" y="70" width="56" height="56" rx="12" fill="var(--color-slate)"/><circle cx="218" cy="98" r="9" fill="var(--color-paper)"/></g>
-              <g class="agent"><rect x="190" y="138" width="56" height="56" rx="12" fill="var(--color-slate-2)"/><circle cx="218" cy="166" r="9" fill="var(--color-paper)"/></g>
-              <g class="agent"><rect x="190" y="206" width="56" height="56" rx="12" fill="var(--color-navy)"/><circle cx="218" cy="234" r="9" fill="var(--color-paper)"/></g>
+              <g class="agent"><rect x="200" y="244" width="28" height="28" rx="7" fill="var(--color-slate-2)"/><circle cx="214" cy="258" r="5" fill="var(--color-paper)"/></g>
+              <g class="agent"><rect x="236" y="244" width="28" height="28" rx="7" fill="var(--color-navy)"/><circle cx="250" cy="258" r="5" fill="var(--color-paper)"/></g>
+              <g class="agent"><rect x="272" y="244" width="28" height="28" rx="7" fill="var(--color-slate)"/><circle cx="286" cy="258" r="5" fill="var(--color-paper)"/></g>
             </g>
           </svg>
         </figure>
       </div>
     </section>
 
-    <!-- ─── 4.0 AGENTS ──────────────────────────────────────── -->
+    <!-- ─── 5.0 AGENTS ──────────────────────────────────────── -->
     <section class="stage" id="agents" data-reveal>
       <hr class="stage__rule" />
       <div class="stage__grid">
         <div class="stage__label">
-          <span class="stage__num">4.0</span>
+          <span class="stage__num">5.0</span>
           <span class="stage__name">Agents</span>
         </div>
         <div class="stage__body">
@@ -252,12 +315,12 @@
       </div>
     </section>
 
-    <!-- ─── 5.0 CONTEXT ─────────────────────────────────────── -->
+    <!-- ─── 6.0 CONTEXT ─────────────────────────────────────── -->
     <section class="stage" id="context" data-reveal>
       <hr class="stage__rule" />
       <div class="stage__grid">
         <div class="stage__label">
-          <span class="stage__num">5.0</span>
+          <span class="stage__num">6.0</span>
           <span class="stage__name">Context</span>
         </div>
         <div class="stage__body">
@@ -297,12 +360,12 @@
       </div>
     </section>
 
-    <!-- ─── 6.0 IN PRACTICE · concrete examples ─────────────── -->
+    <!-- ─── 7.0 IN PRACTICE · concrete examples ─────────────── -->
     <section class="stage practice" id="practice" data-reveal>
       <hr class="stage__rule" />
       <div class="stage__grid stage__grid--full">
         <div class="stage__label">
-          <span class="stage__num">6.0</span>
+          <span class="stage__num">7.0</span>
           <span class="stage__name">In&nbsp;practice</span>
         </div>
         <div class="stage__body stage__body--wide">
@@ -354,6 +417,7 @@
               <li><a class="chip" href="https://llamaindex.ai" target="_blank" rel="noopener">LlamaIndex</a></li>
               <li><a class="chip" href="https://langchain.com/langgraph" target="_blank" rel="noopener">LangGraph</a></li>
               <li><a class="chip" href="https://letta.com" target="_blank" rel="noopener">Letta</a></li>
+              <li><a class="chip" href="https://flueframework.com" target="_blank" rel="noopener">Flue</a></li>
             </ul>
           </li>
           <li class="cstage cstage--loop">
@@ -361,6 +425,22 @@
             <p class="cstage__desc">Whatever the agent does becomes a trace. The memory tools above write that outcome back — so the loop returns to capture, a little smarter each pass.</p>
             <p class="cstage__return">&#8617; feeds back into <strong>01 Capture</strong></p>
           </li>
+        </ol>
+      </div>
+
+      <div class="layer">
+        <h3 class="layer__head"><span class="layer__tag">For yourself</span> The same loop, on top of the apps you already use</h3>
+        <p class="layer__note">
+          You don't need new software to start. If you already keep notes in Obsidian,
+          plain markdown, or Apple Notes, you have capture and store covered. The work
+          is laying a thin layer over them, so an agent can read what you know — and
+          write back to it.
+        </p>
+        <ol class="flow flow--personal">
+          <li><span>Capture</span> in plain markdown — one folder, so anything can read it.</li>
+          <li><span>Curate &amp; store</span> by pointing a memory tool like Mem0 or SuperMemory at that folder.</li>
+          <li><span>Execute</span> by giving your agent read access to the index it builds.</li>
+          <li><span>Experience</span> by saving what you learn back as notes — the loop closes, at the size of one person.</li>
         </ol>
       </div>
 

@@ -191,6 +191,7 @@ a { color: inherit; }
   text-anchor: middle;
   letter-spacing: 0.02em;
 }
+.art-label--start { text-anchor: start; }
 
 /* lock-up lists */
 .lockup, .flow {
@@ -207,6 +208,20 @@ a { color: inherit; }
 }
 .lockup strong, .flow span { font-family: var(--font-display); font-weight: 700; }
 .lockup strong { color: var(--color-ink); }
+
+/* who owns each step — you vs the agents */
+.own {
+  font-family: var(--font-mono);
+  font-size: 0.66em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.18em 0.55em;
+  border-radius: 2px;
+  margin-right: 0.55em;
+  color: var(--color-paper);
+}
+.own--you   { background: var(--color-slate-2); }
+.own--agent { background: var(--color-accent); }
 
 .flow { counter-reset: step; }
 .flow li {
@@ -255,6 +270,12 @@ a { color: inherit; }
   border-radius: 2px;
 }
 .layer__tag--accent { background: var(--color-accent); }
+
+.layer__note {
+  max-width: 60ch;
+  color: var(--color-ink-2);
+  margin: 0 0 var(--space-lg);
+}
 
 .inline-mine {
   font-family: var(--font-mono);
@@ -524,7 +545,13 @@ a { color: inherit; }
 .art--moat:hover .loop-pulse { animation-duration: 1.8s; }
 @keyframes travel { to { offset-distance: 100%; } }
 
-/* people — intent flowing along the dashed lines */
+/* people — attention bars fill in, execution hands off down the line */
+.bar { transform-box: fill-box; transform-origin: left center; }
+.in .art--people .bar { animation: grow var(--dur-mid) var(--ease-out) backwards; }
+.in .art--people .bar:nth-of-type(1) { animation-delay: 120ms; }
+.in .art--people .bar:nth-of-type(2) { animation-delay: 260ms; }
+.in .art--people .bar:nth-of-type(3) { animation-delay: 400ms; }
+@keyframes grow { from { transform: scaleX(0); opacity: 0; } to { transform: scaleX(1); opacity: 1; } }
 .in .art--people .flow-lines line { animation: flow 1.6s linear infinite; }
 .art--people:hover .flow-lines line { animation-duration: 0.55s; }
 @keyframes flow { to { stroke-dashoffset: -90; } }
@@ -545,6 +572,27 @@ a { color: inherit; }
 @keyframes dotpulse {
   0%, 100% { transform: scale(1);   opacity: 0.85; }
   50%      { transform: scale(1.4); opacity: 1; }
+}
+
+/* scarce — pillars rise on reveal; commoditised dots evaporate to nothing */
+.pillar { transform-box: fill-box; transform-origin: bottom center; }
+.in .art--scarce .pillar { animation: rise var(--dur-mid) var(--ease-out) backwards; }
+.in .art--scarce .pillar:nth-of-type(1) { animation-delay: 120ms; }
+.in .art--scarce .pillar:nth-of-type(2) { animation-delay: 240ms; }
+.in .art--scarce .pillar:nth-of-type(3) { animation-delay: 360ms; }
+.in .art--scarce .pillar:nth-of-type(4) { animation-delay: 480ms; }
+@keyframes rise { from { transform: scaleY(0); opacity: 0; } to { transform: scaleY(1); opacity: 1; } }
+.vanish circle { transform-box: fill-box; transform-origin: center; }
+.in .art--scarce .vanish circle { animation: evaporate 4.5s var(--ease-in-out) infinite; }
+.in .art--scarce .vanish circle:nth-child(2) { animation-delay: 0.6s; }
+.in .art--scarce .vanish circle:nth-child(3) { animation-delay: 1.2s; }
+.in .art--scarce .vanish circle:nth-child(4) { animation-delay: 1.8s; }
+.in .art--scarce .vanish circle:nth-child(5) { animation-delay: 2.4s; }
+.in .art--scarce .vanish circle:nth-child(6) { animation-delay: 3.0s; }
+@keyframes evaporate {
+  0%   { transform: translateY(6px);   opacity: 0.55; }
+  50%  { transform: translateY(-10px); opacity: 0.12; }
+  100% { transform: translateY(6px);   opacity: 0.55; }
 }
 
 @media (prefers-reduced-motion: reduce) {
