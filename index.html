@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI-Native — Redesign the work, not just the worker</title>
-  <meta name="description" content="Adding AI changes nothing until you redesign the work around it. A field guide to building an AI-native organisation: why, the moat, people, agents, and context." />
+  <title>AI-Native — A field guide, one idea at a time</title>
+  <meta name="description" content="A digestible field guide to building an AI-native organisation: why it matters now, the system, the pieces, the moat, and where to start. One idea per page." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,465 +12,612 @@
 
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/guide.css" />
 </head>
 <body>
 
-  <!-- ─── NAV · N9 edge-aligned minimal ─────────────────────── -->
-  <header class="nav">
-    <a class="nav__mark" href="#top">AI&#8202;·&#8202;NATIVE</a>
-    <nav class="nav__links" aria-label="Sections">
-      <a href="#why">Why</a>
-      <a href="#moat">Moat</a>
-      <a href="#scarce">Scarce</a>
-      <a href="#people">People</a>
-      <a href="#agents">Agents</a>
-      <a href="#context">Context</a>
-      <a href="#practice">In&nbsp;practice</a>
-    </nav>
-  </header>
+  <a class="skip" href="#deck">Skip to the guide</a>
 
-  <main id="top">
+  <div class="app">
 
-    <!-- ─── HERO · H9 illustration centrepiece ──────────────── -->
-    <section class="hero" data-reveal>
-      <p class="hero__kicker">A field guide</p>
-      <h1 class="hero__title">
-        Adding AI changes nothing until you redesign the&nbsp;work.
-      </h1>
-      <p class="hero__lede">
-        The first electric factories bolted a motor onto a steam-era floor and saw
-        no gain at all. The payoff came decades later, when owners tore up the
-        layout and built around the motor. AI is at that same moment now. This is a
-        short guide to the rebuild.
-      </p>
+    <!-- ─── CHAPTER TABS · clickable, sticky ─────────────────── -->
+    <header class="tabs">
+      <a class="tabs__mark" href="#why-1">AI&#8202;·&#8202;NATIVE</a>
+      <nav class="tabs__nav" aria-label="Chapters">
+        <a class="tab" href="#why-1"    data-chapter="why"><span class="tab__n">01</span>Why now</a>
+        <a class="tab" href="#shift-1"  data-chapter="shift"><span class="tab__n">02</span>The shift</a>
+        <a class="tab" href="#system-1" data-chapter="system"><span class="tab__n">03</span>The system</a>
+        <a class="tab" href="#pieces-1" data-chapter="pieces"><span class="tab__n">04</span>The pieces</a>
+        <a class="tab" href="#moat-1"   data-chapter="moat"><span class="tab__n">05</span>The moat</a>
+        <a class="tab" href="#start-1"  data-chapter="start"><span class="tab__n">06</span>Start</a>
+      </nav>
+    </header>
 
-      <figure class="hero__art" aria-hidden="true">
-        <!-- two faceless riders, flat cel-vinyl · wheels turn, sun breathes -->
-        <svg viewBox="0 0 720 360" role="img" class="art art--hero" data-parallax>
-          <!-- ground -->
-          <rect x="0" y="300" width="720" height="4" fill="var(--color-rule)" />
+    <!-- ─── DECK · one idea per page ─────────────────────────── -->
+    <main class="deck" id="deck" aria-roledescription="carousel" aria-label="The AI-native field guide">
 
-          <!-- sun disc -->
-          <circle cx="620" cy="86" r="40" fill="var(--color-sand)" class="sun" data-depth="3" />
+      <!-- ════ CHAPTER 1 · WHY NOW ════════════════════════════ -->
 
-          <!-- rider one (slate) -->
-          <g class="rider rider--a" data-depth="1.5">
-            <g class="wheel"><circle cx="150" cy="252" r="34" fill="none" stroke="var(--color-navy)" stroke-width="9" /><line class="spoke" x1="150" y1="222" x2="150" y2="282" /><line class="spoke" x1="120" y1="252" x2="180" y2="252" /></g>
-            <g class="wheel"><circle cx="266" cy="252" r="34" fill="none" stroke="var(--color-navy)" stroke-width="9" /><line class="spoke" x1="266" y1="222" x2="266" y2="282" /><line class="spoke" x1="236" y1="252" x2="296" y2="252" /></g>
-            <path d="M150 252 L208 252 L240 200 L266 252" fill="none" stroke="var(--color-slate)" stroke-width="9" stroke-linejoin="round" stroke-linecap="round" />
-            <path d="M208 252 L208 178" stroke="var(--color-slate)" stroke-width="9" stroke-linecap="round" />
-            <!-- body -->
-            <path d="M208 178 L196 138" stroke="var(--color-slate-2)" stroke-width="13" stroke-linecap="round" />
-            <path d="M196 142 L240 200" stroke="var(--color-slate-2)" stroke-width="11" stroke-linecap="round" />
-            <circle cx="190" cy="116" r="20" fill="var(--color-slate-2)" />
-          </g>
-
-          <!-- rider two (terracotta) -->
-          <g class="rider rider--b" data-depth="2.4">
-            <g class="wheel"><circle cx="430" cy="252" r="34" fill="none" stroke="var(--color-navy)" stroke-width="9" /><line class="spoke" x1="430" y1="222" x2="430" y2="282" /><line class="spoke" x1="400" y1="252" x2="460" y2="252" /></g>
-            <g class="wheel"><circle cx="546" cy="252" r="34" fill="none" stroke="var(--color-navy)" stroke-width="9" /><line class="spoke" x1="546" y1="222" x2="546" y2="282" /><line class="spoke" x1="516" y1="252" x2="576" y2="252" /></g>
-            <path d="M430 252 L488 252 L520 200 L546 252" fill="none" stroke="var(--color-clay)" stroke-width="9" stroke-linejoin="round" stroke-linecap="round" />
-            <path d="M488 252 L488 178" stroke="var(--color-clay)" stroke-width="9" stroke-linecap="round" />
-            <path d="M488 178 L476 138" stroke="var(--color-accent)" stroke-width="13" stroke-linecap="round" />
-            <path d="M476 142 L520 200" stroke="var(--color-accent)" stroke-width="11" stroke-linecap="round" />
-            <circle cx="470" cy="116" r="20" fill="var(--color-accent)" />
-          </g>
-        </svg>
-      </figure>
-
-      <a class="cta" href="#why">
-        <span>Read the guide</span>
-        <span class="cta__arrow" aria-hidden="true">&#8595;</span>
-      </a>
-    </section>
-
-    <!-- ─── 1.0 WHY ─────────────────────────────────────────── -->
-    <section class="stage" id="why" data-reveal>
-      <hr class="stage__rule" />
-      <div class="stage__grid">
-        <div class="stage__label">
-          <span class="stage__num">1.0</span>
-          <span class="stage__name">Why</span>
+      <article class="slide" id="why-1" data-chapter="why" aria-roledescription="slide" aria-label="Intelligence is getting cheap">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">01 · Why now</p>
+            <h2 class="slide__head">Intelligence is getting cheap.</h2>
+            <p class="slide__sub">When a new technology makes something abundant, its price falls towards zero. It happened to light, to information, to compute. It is happening now to the work of thinking.</p>
+          </div>
+          <div class="slide__art">
+            <svg viewBox="0 0 320 210" class="art art--fall" role="img" aria-hidden="true">
+              <line x1="30" y1="20" x2="30" y2="180" stroke="var(--color-rule)" stroke-width="2" />
+              <line x1="30" y1="180" x2="300" y2="180" stroke="var(--color-rule)" stroke-width="2" />
+              <path class="fallline" d="M40 40 C 110 50, 150 150, 295 168" fill="none" stroke="var(--color-accent)" stroke-width="4" stroke-linecap="round" />
+              <text class="art-label art-label--start" x="40" y="200">cost</text>
+              <text class="art-label" x="280" y="200">time</text>
+            </svg>
+          </div>
         </div>
-        <div class="stage__body">
-          <h2 class="stage__head">A faster version of yesterday is not the goal.</h2>
-          <p>
-            Bolt AI onto the way you work today and you get exactly that: yesterday,
-            run a little quicker. The org chart, the hand-offs, the meetings — all of
-            it was built for people doing the work by hand. Speeding up a process that
-            shouldn't exist is not progress.
-          </p>
-          <p>
-            The gain shows up when you ask a harder question. Not <em>"where can AI
-            save us time?"</em> but <em>"if machines can do the doing, what should the
-            work even be?"</em> That is the rebuild. Everything below is how to start it.
-          </p>
+      </article>
+
+      <article class="slide" id="why-2" data-chapter="why" aria-roledescription="slide" aria-label="We have watched this before">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">01 · Why now</p>
+            <h2 class="slide__head">We have watched this before.</h2>
+            <p class="slide__sub">As information went abundant online, US newspaper advertising revenue fell by roughly four-fifths in fifteen years. The product was still good. It simply stopped being scarce.</p>
+            <p class="slide__cite">Source: Pew Research Center / News Media Alliance, US newspaper ad revenue, 2005–2020.</p>
+          </div>
+          <div class="slide__art">
+            <svg viewBox="0 0 320 230" class="art art--tiles" role="img" aria-hidden="true">
+              <rect class="tile" x="20"  y="20"  width="80" height="56" rx="6" fill="var(--color-slate)" />
+              <rect class="tile" x="120" y="20"  width="80" height="56" rx="6" fill="var(--color-slate)" />
+              <rect class="tile" x="220" y="20"  width="80" height="56" rx="6" fill="var(--color-slate)" />
+              <rect class="tile" x="20"  y="86"  width="80" height="56" rx="6" fill="var(--color-slate-2)" />
+              <rect class="tile" x="120" y="86"  width="80" height="56" rx="6" fill="var(--color-slate-2)" />
+              <rect class="tile" x="220" y="86"  width="80" height="56" rx="6" fill="var(--color-slate-2)" />
+              <rect class="tile" x="20"  y="152" width="80" height="56" rx="6" fill="var(--color-clay)" />
+              <rect class="tile" x="120" y="152" width="80" height="56" rx="6" fill="var(--color-clay)" />
+              <rect class="tile" x="220" y="152" width="80" height="56" rx="6" fill="var(--color-clay)" />
+            </svg>
+          </div>
         </div>
-        <figure class="stage__art" aria-hidden="true">
-          <svg viewBox="0 0 320 320" class="art art--why" data-parallax>
-            <circle class="whyring" cx="160" cy="160" r="120" fill="none" stroke="var(--color-rule)" stroke-width="2" stroke-dasharray="4 8" />
-            <!-- four walking figures around a ring, each a little more upright -->
-            <g class="walkers" data-depth="2">
-              <g transform="translate(160 40)" class="walker"><circle r="13" fill="var(--color-slate)"/><rect x="-5" y="13" width="10" height="30" rx="5" fill="var(--color-slate-2)"/></g>
-              <g transform="translate(280 160)" class="walker"><circle r="13" fill="var(--color-slate)"/><rect x="-5" y="13" width="10" height="32" rx="5" fill="var(--color-slate-2)"/></g>
-              <g transform="translate(160 280)" class="walker"><circle r="13" fill="var(--color-clay)"/><rect x="-5" y="13" width="10" height="34" rx="5" fill="var(--color-accent)"/></g>
-              <g transform="translate(40 160)" class="walker"><circle r="13" fill="var(--color-slate)"/><rect x="-5" y="13" width="10" height="28" rx="5" fill="var(--color-slate-2)"/></g>
-            </g>
-          </svg>
-        </figure>
-      </div>
-    </section>
+      </article>
 
-    <!-- ─── 2.0 MOAT ────────────────────────────────────────── -->
-    <section class="stage" id="moat" data-reveal>
-      <hr class="stage__rule" />
-      <div class="stage__grid">
-        <div class="stage__label">
-          <span class="stage__num">2.0</span>
-          <span class="stage__name">Moat</span>
+      <article class="slide slide--solo" id="why-3" data-chapter="why" aria-roledescription="slide" aria-label="Doing the task is no longer the edge">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">01 · Why now</p>
+            <h2 class="slide__head">When everyone holds the same model, using it isn&rsquo;t the edge.</h2>
+            <p class="slide__sub">If a prompt can produce the work, the work is no longer scarce. The advantage moves to how you organise everything around the model.</p>
+          </div>
         </div>
-        <div class="stage__body">
-          <h2 class="stage__head">Your moat is a loop, not a tool.</h2>
-          <p>
-            A rival can buy the same model and copy your best feature by Friday. What
-            they can't copy is how fast you learn. That speed comes from a loop with
-            three parts, each feeding the next.
-          </p>
-          <ul class="lockup">
-            <li><strong>System.</strong> Build something that reliably ships work, not slides about work.</li>
-            <li><strong>Speed.</strong> Ship it faster than anyone else can — small, often, in the open.</li>
-            <li><strong>Signal.</strong> Read what shipping taught you, then feed it back to the system.</li>
-          </ul>
-          <p>
-            Each turn of the loop makes the next turn quicker. Run it long enough and
-            the gap stops being a gap. It becomes a moat.
-          </p>
+      </article>
+
+      <!-- ════ CHAPTER 2 · THE SHIFT ══════════════════════════ -->
+
+      <article class="slide" id="shift-1" data-chapter="shift" aria-roledescription="slide" aria-label="Most AI today is a chatbot in a tab">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">02 · The shift</p>
+            <h2 class="slide__head">Most AI today is a chatbot in a tab.</h2>
+            <p class="slide__sub">You ask, it answers, you copy the answer back into the real work by hand. Helpful, a little faster, but it never actually touches the business.</p>
+          </div>
+          <div class="slide__art">
+            <svg viewBox="0 0 320 230" class="art art--chat" role="img" aria-hidden="true">
+              <rect x="40" y="36" width="240" height="120" rx="14" fill="var(--color-paper-2)" stroke="var(--color-rule)" stroke-width="2" />
+              <path d="M90 156 L90 188 L122 156 Z" fill="var(--color-paper-2)" stroke="var(--color-rule)" stroke-width="2" />
+              <line x1="66" y1="72"  x2="254" y2="72"  stroke="var(--color-ink-3)" stroke-width="6" stroke-linecap="round" />
+              <line x1="66" y1="98"  x2="230" y2="98"  stroke="var(--color-ink-3)" stroke-width="6" stroke-linecap="round" />
+              <line x1="66" y1="124" x2="186" y2="124" stroke="var(--color-ink-3)" stroke-width="6" stroke-linecap="round" />
+            </svg>
+          </div>
         </div>
-        <figure class="stage__art" aria-hidden="true">
-          <svg viewBox="0 0 320 320" class="art art--moat" data-parallax>
-            <g fill="none" stroke-width="2.5" stroke-linecap="round">
-              <path class="loop-arc" d="M160 60 A100 100 0 0 1 246 210" stroke="var(--color-slate)" />
-              <path class="loop-arc" d="M246 210 A100 100 0 0 1 74 210" stroke="var(--color-clay)" />
-              <path class="loop-arc" d="M74 210 A100 100 0 0 1 160 60" stroke="var(--color-slate-2)" />
-            </g>
-            <!-- a pulse travels the loop, never stopping -->
-            <circle class="loop-pulse" r="7" fill="var(--color-accent)" />
-            <g class="node" data-depth="1.5"><circle cx="160" cy="60" r="30" fill="var(--color-paper-3)" stroke="var(--color-navy)" stroke-width="2.5"/><text x="160" y="64" class="art-label">System</text></g>
-            <g class="node" data-depth="1.5"><circle cx="246" cy="210" r="30" fill="var(--color-paper-3)" stroke="var(--color-navy)" stroke-width="2.5"/><text x="246" y="214" class="art-label">Speed</text></g>
-            <g class="node" data-depth="1.5"><circle cx="74" cy="210" r="30" fill="var(--color-accent)" stroke="var(--color-accent-ink)" stroke-width="2.5"/><text x="74" y="214" class="art-label" fill="var(--color-paper)">Signal</text></g>
-          </svg>
-        </figure>
-      </div>
-    </section>
+      </article>
 
-    <!-- ─── 3.0 SCARCE · post-agent defensibility ───────────── -->
-    <section class="stage" id="scarce" data-reveal>
-      <hr class="stage__rule" />
-      <div class="stage__grid">
-        <div class="stage__label">
-          <span class="stage__num">3.0</span>
-          <span class="stage__name">Scarce</span>
+      <article class="slide" id="shift-2" data-chapter="shift" aria-roledescription="slide" aria-label="An agent has memory and can act">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">02 · The shift</p>
+            <h2 class="slide__head">An agent is different. It remembers, and it acts.</h2>
+            <p class="slide__sub">An agent carries context between tasks and takes steps on its own — reading, writing, calling tools — instead of waiting for you to ferry every answer across.</p>
+          </div>
+          <div class="slide__art">
+            <svg viewBox="0 0 320 230" class="art art--agent" role="img" aria-hidden="true">
+              <!-- memory -->
+              <ellipse cx="74" cy="64" rx="34" ry="12" fill="var(--color-slate-2)" />
+              <path d="M40 64 L40 150 A34 12 0 0 0 108 150 L108 64" fill="var(--color-slate)" />
+              <ellipse cx="74" cy="64" rx="34" ry="12" fill="var(--color-slate-2)" />
+              <text class="art-label" x="74" y="186">memory</text>
+              <!-- agent -->
+              <circle cx="186" cy="100" r="30" fill="var(--color-navy)" />
+              <text class="art-label" x="186" y="186">agent</text>
+              <line x1="108" y1="104" x2="156" y2="100" stroke="var(--color-ink-3)" stroke-width="3" />
+              <!-- act -->
+              <rect x="248" y="78" width="46" height="46" rx="8" fill="var(--color-clay)" />
+              <text class="art-label" x="271" y="186">acts</text>
+              <path d="M216 100 L246 100" stroke="var(--color-accent)" stroke-width="3" marker-end="url(#arr)" />
+              <defs>
+                <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                  <path d="M0 0 L8 4 L0 8 Z" fill="var(--color-accent)" />
+                </marker>
+              </defs>
+            </svg>
+          </div>
         </div>
-        <div class="stage__body">
-          <h2 class="stage__head">When intelligence is free, four things stay scarce.</h2>
-          <p>
-            Agents make execution cheap, and before long everyone will have them —
-            the same models, shipping the same features. When the doing costs almost
-            nothing, doing it is no longer where the advantage lives. So the question
-            that outlasts the tools is this: when intelligence is free, what is still
-            hard to get?
-          </p>
-          <ul class="lockup">
-            <li><strong>Context.</strong> What your organisation has learned that no one else can see. Earned from your own work — a rival can't buy it.</li>
-            <li><strong>Attention.</strong> One place people actually come to do the work. Hard to win, harder to hold.</li>
-            <li><strong>Trust.</strong> Being measured on the outcome, not the pitch. Skin in the game, not slideware.</li>
-            <li><strong>Brand.</strong> A reputation that compounds, so each win makes the next one easier.</li>
-          </ul>
-          <p>
-            None of these are the agents. The agents are table stakes now. The moat is
-            everything they can't hand you — and context, the first of the four, is the
-            one you can build on purpose. The rest of this guide is how.
-          </p>
+      </article>
+
+      <article class="slide slide--solo" id="shift-3" data-chapter="shift" aria-roledescription="slide" aria-label="The harness becomes your operating layer">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">02 · The shift</p>
+            <h2 class="slide__head">The harness around the model becomes your operating layer.</h2>
+            <p class="slide__sub">Everyone rents the same model. What you build around it — the memory, the rules, the tools it can reach — is the part that is actually yours.</p>
+          </div>
         </div>
-        <figure class="stage__art" aria-hidden="true">
-          <svg viewBox="0 0 320 320" class="art art--scarce" data-parallax>
-            <!-- commoditised: abundant, evaporating to nothing -->
-            <g class="vanish" data-depth="2.6">
-              <circle cx="70"  cy="64" r="6" fill="var(--color-sand)"/>
-              <circle cx="120" cy="44" r="5" fill="var(--color-sand)"/>
-              <circle cx="180" cy="58" r="6" fill="var(--color-sand)"/>
-              <circle cx="232" cy="40" r="5" fill="var(--color-sand)"/>
-              <circle cx="150" cy="80" r="4" fill="var(--color-sand)"/>
-              <circle cx="250" cy="74" r="6" fill="var(--color-sand)"/>
-            </g>
-            <!-- ground -->
-            <line x1="20" y1="278" x2="300" y2="278" stroke="var(--color-rule)" stroke-width="2"/>
-            <!-- scarce: four pillars standing firm -->
-            <g class="pillars" data-depth="1.2">
-              <rect class="pillar" x="36"  y="150" width="46" height="128" rx="8" fill="var(--color-slate)"/>
-              <rect class="pillar" x="98"  y="120" width="46" height="158" rx="8" fill="var(--color-slate-2)"/>
-              <rect class="pillar" x="160" y="138" width="46" height="140" rx="8" fill="var(--color-clay)"/>
-              <rect class="pillar" x="222" y="108" width="46" height="170" rx="8" fill="var(--color-accent)"/>
-            </g>
-            <text x="59"  y="298" class="art-label">Context</text>
-            <text x="121" y="298" class="art-label">Attention</text>
-            <text x="183" y="298" class="art-label">Trust</text>
-            <text x="245" y="298" class="art-label">Brand</text>
-          </svg>
-        </figure>
-      </div>
-    </section>
+      </article>
 
-    <!-- ─── 4.0 PEOPLE ──────────────────────────────────────── -->
-    <section class="stage" id="people" data-reveal>
-      <hr class="stage__rule" />
-      <div class="stage__grid">
-        <div class="stage__label">
-          <span class="stage__num">4.0</span>
-          <span class="stage__name">People</span>
+      <!-- ════ CHAPTER 3 · THE SYSTEM (stack assembles) ═══════ -->
+      <!-- Each slide adds one layer via the build-N class on .art--stack. -->
+
+      <article class="slide" id="system-1" data-chapter="system" aria-roledescription="slide" aria-label="Think of it as a stack: the model">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">03 · The system</p>
+            <h2 class="slide__head">Think of it as a stack.</h2>
+            <p class="slide__sub">Start at the bottom. The model is the raw engine — and everyone rents the same handful of them.</p>
+          </div>
+          <div class="slide__art">
+            <!-- STACK · reused markup; build-1 shows the model only -->
+            <svg viewBox="0 0 320 262" class="art art--stack build-1" role="img" aria-hidden="true">
+              <g class="layer layer-5"><rect x="10" y="10"  width="210" height="38" rx="8" fill="var(--color-clay)" /><text class="art-label art-label--start" x="232" y="34">Agents</text></g>
+              <g class="layer layer-4"><rect x="10" y="58"  width="210" height="38" rx="8" fill="var(--color-slate)" /><text class="art-label art-label--start" x="232" y="82">Utilities</text></g>
+              <g class="layer layer-3 layer-own"><rect x="10" y="106" width="210" height="38" rx="8" fill="var(--color-paper-3)" stroke="var(--color-accent)" stroke-width="2" /><text class="art-label art-label--start" x="232" y="130">Yours</text></g>
+              <g class="layer layer-2"><rect x="10" y="154" width="210" height="38" rx="8" fill="var(--color-slate-2)" /><text class="art-label art-label--start" x="232" y="178">Harness</text></g>
+              <g class="layer layer-1"><rect x="10" y="202" width="210" height="38" rx="8" fill="var(--color-navy)" /><text class="art-label art-label--start" x="232" y="226">Model</text></g>
+            </svg>
+          </div>
         </div>
-        <div class="stage__body">
-          <h2 class="stage__head">Everyone becomes a manager.</h2>
-          <p>
-            When agents handle the execution, people move up a level. You stop doing
-            the task yourself and start directing it — the way a good manager directs a
-            team. So your hours should move with you: most of them onto strategy and
-            judgement, far fewer on execution. The agents take that part.
-          </p>
-          <ul class="lockup lockup--owned">
-            <li><span class="own own--you">You</span><strong>Strategy.</strong> Decide what's worth doing, and what isn't. Give this more of your time, not less.</li>
-            <li><span class="own own--agent">Agents</span><strong>Execution.</strong> Hand it off with enough context to act without you. This is the part that should shrink.</li>
-            <li><span class="own own--you">You</span><strong>Judgement.</strong> Check the work, catch what's wrong, own the call.</li>
-          </ul>
+      </article>
+
+      <article class="slide" id="system-2" data-chapter="system" aria-roledescription="slide" aria-label="Add the agent harness">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">03 · The system</p>
+            <h2 class="slide__head">Add the harness.</h2>
+            <p class="slide__sub">The harness is the loop that lets the model plan, use tools and check its own work. It turns a model into something that can run a task end to end.</p>
+          </div>
+          <div class="slide__art">
+            <svg viewBox="0 0 320 262" class="art art--stack build-2" role="img" aria-hidden="true">
+              <g class="layer layer-5"><rect x="10" y="10"  width="210" height="38" rx="8" fill="var(--color-clay)" /><text class="art-label art-label--start" x="232" y="34">Agents</text></g>
+              <g class="layer layer-4"><rect x="10" y="58"  width="210" height="38" rx="8" fill="var(--color-slate)" /><text class="art-label art-label--start" x="232" y="82">Utilities</text></g>
+              <g class="layer layer-3 layer-own"><rect x="10" y="106" width="210" height="38" rx="8" fill="var(--color-paper-3)" stroke="var(--color-accent)" stroke-width="2" /><text class="art-label art-label--start" x="232" y="130">Yours</text></g>
+              <g class="layer layer-2"><rect x="10" y="154" width="210" height="38" rx="8" fill="var(--color-slate-2)" /><text class="art-label art-label--start" x="232" y="178">Harness</text></g>
+              <g class="layer layer-1"><rect x="10" y="202" width="210" height="38" rx="8" fill="var(--color-navy)" /><text class="art-label art-label--start" x="232" y="226">Model</text></g>
+            </svg>
+          </div>
         </div>
-        <figure class="stage__art" aria-hidden="true">
-          <svg viewBox="0 0 320 320" class="art art--people" data-parallax>
-            <!-- where your attention goes: lots on strategy + judgement, little on execution -->
-            <g class="rows" data-depth="1.2">
-              <text x="18" y="58" class="art-label art-label--start">Strategy</text>
-              <rect class="bar" x="16" y="68" width="248" height="28" rx="8" fill="var(--color-slate)"/>
+      </article>
 
-              <text x="18" y="146" class="art-label art-label--start">Judgement</text>
-              <rect class="bar" x="16" y="156" width="224" height="28" rx="8" fill="var(--color-clay)"/>
-
-              <text x="18" y="234" class="art-label art-label--start">Execution</text>
-              <rect class="bar bar--shrink" x="16" y="244" width="58" height="28" rx="8" fill="var(--color-sand)"/>
-            </g>
-            <!-- execution handed off to the agents -->
-            <g class="flow-lines" stroke="var(--color-rule)" stroke-width="2" stroke-dasharray="3 6">
-              <line x1="80" y1="258" x2="196" y2="258"/>
-            </g>
-            <g class="agents-row" data-depth="2.4">
-              <g class="agent"><rect x="200" y="244" width="28" height="28" rx="7" fill="var(--color-slate-2)"/><circle cx="214" cy="258" r="5" fill="var(--color-paper)"/></g>
-              <g class="agent"><rect x="236" y="244" width="28" height="28" rx="7" fill="var(--color-navy)"/><circle cx="250" cy="258" r="5" fill="var(--color-paper)"/></g>
-              <g class="agent"><rect x="272" y="244" width="28" height="28" rx="7" fill="var(--color-slate)"/><circle cx="286" cy="258" r="5" fill="var(--color-paper)"/></g>
-            </g>
-          </svg>
-        </figure>
-      </div>
-    </section>
-
-    <!-- ─── 5.0 AGENTS ──────────────────────────────────────── -->
-    <section class="stage" id="agents" data-reveal>
-      <hr class="stage__rule" />
-      <div class="stage__grid">
-        <div class="stage__label">
-          <span class="stage__num">5.0</span>
-          <span class="stage__name">Agents</span>
+      <article class="slide" id="system-3" data-chapter="system" aria-roledescription="slide" aria-label="Add your own scaffolding">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">03 · The system</p>
+            <h2 class="slide__head">Add your scaffolding. This layer is yours.</h2>
+            <p class="slide__sub">Your memory, your instructions, your context about how the business actually works. The model is rented; this is the one layer nobody else can copy.</p>
+          </div>
+          <div class="slide__art">
+            <svg viewBox="0 0 320 262" class="art art--stack build-3 glow" role="img" aria-hidden="true">
+              <g class="layer layer-5"><rect x="10" y="10"  width="210" height="38" rx="8" fill="var(--color-clay)" /><text class="art-label art-label--start" x="232" y="34">Agents</text></g>
+              <g class="layer layer-4"><rect x="10" y="58"  width="210" height="38" rx="8" fill="var(--color-slate)" /><text class="art-label art-label--start" x="232" y="82">Utilities</text></g>
+              <g class="layer layer-3 layer-own"><rect x="10" y="106" width="210" height="38" rx="8" fill="var(--color-paper-3)" stroke="var(--color-accent)" stroke-width="2" /><text class="art-label art-label--start" x="232" y="130">Yours</text></g>
+              <g class="layer layer-2"><rect x="10" y="154" width="210" height="38" rx="8" fill="var(--color-slate-2)" /><text class="art-label art-label--start" x="232" y="178">Harness</text></g>
+              <g class="layer layer-1"><rect x="10" y="202" width="210" height="38" rx="8" fill="var(--color-navy)" /><text class="art-label art-label--start" x="232" y="226">Model</text></g>
+            </svg>
+          </div>
         </div>
-        <div class="stage__body">
-          <h2 class="stage__head">An agent is only as good as four things.</h2>
-          <p>
-            Autonomy isn't magic. An agent you can actually trust to run on its own
-            stands on four legs. Get all four right and you can step back. Miss one and
-            you're back to doing the work yourself.
-          </p>
-          <ul class="lockup lockup--quad">
-            <li><strong>Goals.</strong> A clear outcome it's working toward.</li>
-            <li><strong>Skills.</strong> The know-how to pursue that outcome.</li>
-            <li><strong>Tools.</strong> The means to actually take action.</li>
-            <li><strong>Context.</strong> Enough of the situation to act well.</li>
-          </ul>
+      </article>
+
+      <article class="slide" id="system-4" data-chapter="system" aria-roledescription="slide" aria-label="Add the utilities it reaches through">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">03 · The system</p>
+            <h2 class="slide__head">Add the utilities.</h2>
+            <p class="slide__sub">The tools the system reaches through to touch the real world — your command line, your connectors, your APIs. The hands, not the brain.</p>
+          </div>
+          <div class="slide__art">
+            <svg viewBox="0 0 320 262" class="art art--stack build-4" role="img" aria-hidden="true">
+              <g class="layer layer-5"><rect x="10" y="10"  width="210" height="38" rx="8" fill="var(--color-clay)" /><text class="art-label art-label--start" x="232" y="34">Agents</text></g>
+              <g class="layer layer-4"><rect x="10" y="58"  width="210" height="38" rx="8" fill="var(--color-slate)" /><text class="art-label art-label--start" x="232" y="82">Utilities</text></g>
+              <g class="layer layer-3 layer-own"><rect x="10" y="106" width="210" height="38" rx="8" fill="var(--color-paper-3)" stroke="var(--color-accent)" stroke-width="2" /><text class="art-label art-label--start" x="232" y="130">Yours</text></g>
+              <g class="layer layer-2"><rect x="10" y="154" width="210" height="38" rx="8" fill="var(--color-slate-2)" /><text class="art-label art-label--start" x="232" y="178">Harness</text></g>
+              <g class="layer layer-1"><rect x="10" y="202" width="210" height="38" rx="8" fill="var(--color-navy)" /><text class="art-label art-label--start" x="232" y="226">Model</text></g>
+            </svg>
+          </div>
         </div>
-        <figure class="stage__art" aria-hidden="true">
-          <svg viewBox="0 0 320 320" class="art art--agents" data-parallax>
-            <line x1="160" y1="30" x2="160" y2="290" stroke="var(--color-rule)" stroke-width="2"/>
-            <line x1="30" y1="160" x2="290" y2="160" stroke="var(--color-rule)" stroke-width="2"/>
-            <g class="quad" data-depth="1.4">
-              <rect class="q" x="44" y="44" width="100" height="100" rx="10" fill="var(--color-paper-3)" stroke="var(--color-navy)" stroke-width="2"/>
-              <rect class="q" x="176" y="44" width="100" height="100" rx="10" fill="var(--color-paper-3)" stroke="var(--color-navy)" stroke-width="2"/>
-              <rect class="q" x="44" y="176" width="100" height="100" rx="10" fill="var(--color-paper-3)" stroke="var(--color-navy)" stroke-width="2"/>
-              <rect class="q" x="176" y="176" width="100" height="100" rx="10" fill="var(--color-paper-3)" stroke="var(--color-navy)" stroke-width="2"/>
-              <text x="94" y="98" class="art-label">Goals</text>
-              <text x="226" y="98" class="art-label">Skills</text>
-              <text x="94" y="230" class="art-label">Tools</text>
-              <text x="226" y="230" class="art-label">Context</text>
-            </g>
-            <g class="agent-core" data-depth="3">
-              <circle cx="160" cy="160" r="34" fill="var(--color-accent)"/>
-              <circle class="eye" cx="160" cy="152" r="11" fill="var(--color-paper)"/>
-            </g>
-          </svg>
-        </figure>
-      </div>
-    </section>
+      </article>
 
-    <!-- ─── 6.0 CONTEXT ─────────────────────────────────────── -->
-    <section class="stage" id="context" data-reveal>
-      <hr class="stage__rule" />
-      <div class="stage__grid">
-        <div class="stage__label">
-          <span class="stage__num">6.0</span>
-          <span class="stage__name">Context</span>
+      <article class="slide" id="system-5" data-chapter="system" aria-roledescription="slide" aria-label="Add the agents on top">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">03 · The system</p>
+            <h2 class="slide__head">Add the agents.</h2>
+            <p class="slide__sub">On top sit the agents themselves — the workers that run the stack, one task or a whole workflow at a time.</p>
+          </div>
+          <div class="slide__art">
+            <svg viewBox="0 0 320 262" class="art art--stack build-5" role="img" aria-hidden="true">
+              <g class="layer layer-5"><rect x="10" y="10"  width="210" height="38" rx="8" fill="var(--color-clay)" /><text class="art-label art-label--start" x="232" y="34">Agents</text></g>
+              <g class="layer layer-4"><rect x="10" y="58"  width="210" height="38" rx="8" fill="var(--color-slate)" /><text class="art-label art-label--start" x="232" y="82">Utilities</text></g>
+              <g class="layer layer-3 layer-own"><rect x="10" y="106" width="210" height="38" rx="8" fill="var(--color-paper-3)" stroke="var(--color-accent)" stroke-width="2" /><text class="art-label art-label--start" x="232" y="130">Yours</text></g>
+              <g class="layer layer-2"><rect x="10" y="154" width="210" height="38" rx="8" fill="var(--color-slate-2)" /><text class="art-label art-label--start" x="232" y="178">Harness</text></g>
+              <g class="layer layer-1"><rect x="10" y="202" width="210" height="38" rx="8" fill="var(--color-navy)" /><text class="art-label art-label--start" x="232" y="226">Model</text></g>
+            </svg>
+          </div>
         </div>
-        <div class="stage__body">
-          <h2 class="stage__head">Context is the engine, and it runs in a loop.</h2>
-          <p>
-            Of the four legs, context is the one that compounds. It isn't a file you
-            write once. It's a cycle the whole organisation runs, and each pass leaves
-            the next agent a little smarter.
-          </p>
-          <ol class="flow">
-            <li><span>Capture</span> what happens as work is done.</li>
-            <li><span>Curate</span> the small part of it that matters.</li>
-            <li><span>Store</span> it where any agent can reach it.</li>
-            <li><span>Execute</span> the next task on that better footing.</li>
-            <li><span>Experience</span> the result — which becomes the next capture.</li>
-          </ol>
-          <p>
-            Traces from the work and signals from the market both feed back into
-            capture. The loop tightens every cycle. That tightening is the whole game.
-          </p>
+      </article>
+
+      <article class="slide" id="system-6" data-chapter="system" aria-roledescription="slide" aria-label="Only one layer is yours">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">03 · The system</p>
+            <h2 class="slide__head">Five layers. Only one is yours.</h2>
+            <p class="slide__sub">Models, harnesses and utilities are bought or rented by everyone. Your scaffolding — the glowing layer — is where the whole advantage lives. The rest of this guide is about getting it right.</p>
+          </div>
+          <div class="slide__art">
+            <svg viewBox="0 0 320 262" class="art art--stack build-5 glow" role="img" aria-hidden="true">
+              <g class="layer layer-5"><rect x="10" y="10"  width="210" height="38" rx="8" fill="var(--color-clay)" /><text class="art-label art-label--start" x="232" y="34">Agents</text></g>
+              <g class="layer layer-4"><rect x="10" y="58"  width="210" height="38" rx="8" fill="var(--color-slate)" /><text class="art-label art-label--start" x="232" y="82">Utilities</text></g>
+              <g class="layer layer-3 layer-own"><rect x="10" y="106" width="210" height="38" rx="8" fill="var(--color-paper-3)" stroke="var(--color-accent)" stroke-width="2" /><text class="art-label art-label--start" x="232" y="130">Yours</text></g>
+              <g class="layer layer-2"><rect x="10" y="154" width="210" height="38" rx="8" fill="var(--color-slate-2)" /><text class="art-label art-label--start" x="232" y="178">Harness</text></g>
+              <g class="layer layer-1"><rect x="10" y="202" width="210" height="38" rx="8" fill="var(--color-navy)" /><text class="art-label art-label--start" x="232" y="226">Model</text></g>
+            </svg>
+          </div>
         </div>
-        <figure class="stage__art" aria-hidden="true">
-          <svg viewBox="0 0 320 320" class="art art--context" data-parallax>
-            <g fill="none" stroke-width="2.5">
-              <circle class="ring ring--outer" cx="160" cy="160" r="120" stroke="var(--color-rule)" stroke-dasharray="6 10"/>
-              <circle class="ring ring--mid" cx="160" cy="160" r="80" stroke="var(--color-slate)" stroke-dasharray="6 10"/>
-              <circle class="ring ring--inner" cx="160" cy="160" r="42" stroke="var(--color-accent)" stroke-dasharray="6 10"/>
-            </g>
-            <g data-depth="2">
-              <circle class="cdot" cx="160" cy="40" r="10" fill="var(--color-slate-2)"/>
-              <circle class="cdot" cx="160" cy="80" r="9" fill="var(--color-slate)"/>
-              <circle class="cdot" cx="160" cy="118" r="8" fill="var(--color-accent)"/>
-              <circle class="cdot" cx="160" cy="160" r="14" fill="var(--color-navy)"/>
-            </g>
-          </svg>
-        </figure>
-      </div>
-    </section>
+      </article>
 
-    <!-- ─── 7.0 IN PRACTICE · concrete examples ─────────────── -->
-    <section class="stage practice" id="practice" data-reveal>
-      <hr class="stage__rule" />
-      <div class="stage__grid stage__grid--full">
-        <div class="stage__label">
-          <span class="stage__num">7.0</span>
-          <span class="stage__name">In&nbsp;practice</span>
+      <!-- ════ CHAPTER 4 · THE PIECES (the owned layer, broken down) ═ -->
+
+      <article class="slide" id="pieces-1" data-chapter="pieces" aria-roledescription="slide" aria-label="The layer you own has three parts">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">04 · The pieces</p>
+            <h2 class="slide__head">The layer you own has three parts.</h2>
+            <p class="slide__sub">Call it your AI business brain. It is what turns a generic model into something that works the way your business works.</p>
+          </div>
+          <div class="slide__art">
+            <svg viewBox="0 0 320 272" class="art art--three" role="img" aria-hidden="true">
+              <g class="piece piece-1"><rect x="20" y="14"  width="220" height="72" rx="10" fill="var(--color-slate)" /><text class="art-label" x="130" y="56" fill="var(--color-paper)">Memory</text></g>
+              <g class="piece piece-2"><rect x="20" y="102" width="220" height="72" rx="10" fill="var(--color-slate-2)" /><text class="art-label" x="130" y="144" fill="var(--color-paper)">Skills</text></g>
+              <g class="piece piece-3"><rect x="20" y="190" width="220" height="72" rx="10" fill="var(--color-clay)" /><text class="art-label" x="130" y="232" fill="var(--color-paper)">Software</text></g>
+            </svg>
+          </div>
         </div>
-        <div class="stage__body stage__body--wide">
-          <h2 class="stage__head">What this looks like, tool by tool.</h2>
-          <p>
-            The context layer isn't one product — it's the five-step loop from above,
-            and each step has tools that do it well. Below, the loop again, with real
-            options at each stage. The ones I lean on are marked <span class="inline-mine">in use</span>; the rest are the strongest alternatives if you're starting out.
-          </p>
+      </article>
+
+      <article class="slide" id="pieces-2" data-chapter="pieces" aria-roledescription="slide" aria-label="Memory: what your business knows">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">04 · The pieces · Memory</p>
+            <h2 class="slide__head">Memory: what your business knows.</h2>
+            <p class="slide__sub">Decisions, context, customers, history, the reasons behind past calls. Written down once, it stops living only in people&rsquo;s heads — and every agent can draw on it.</p>
+          </div>
+          <div class="slide__art">
+            <svg viewBox="0 0 320 272" class="art art--three focus-1" role="img" aria-hidden="true">
+              <g class="piece piece-1"><rect x="20" y="14"  width="220" height="72" rx="10" fill="var(--color-slate)" /><text class="art-label" x="130" y="56" fill="var(--color-paper)">Memory</text></g>
+              <g class="piece piece-2"><rect x="20" y="102" width="220" height="72" rx="10" fill="var(--color-slate-2)" /><text class="art-label" x="130" y="144" fill="var(--color-paper)">Skills</text></g>
+              <g class="piece piece-3"><rect x="20" y="190" width="220" height="72" rx="10" fill="var(--color-clay)" /><text class="art-label" x="130" y="232" fill="var(--color-paper)">Software</text></g>
+            </svg>
+          </div>
         </div>
-      </div>
+      </article>
 
-      <div class="layer">
-        <h3 class="layer__head"><span class="layer__tag">Context layer</span> The loop, with the tools that run it</h3>
-        <ol class="cstages">
-          <li class="cstage">
-            <div class="cstage__head"><span class="cstage__num">01</span><span class="cstage__name">Capture</span></div>
-            <p class="cstage__desc">Pull the work in from wherever it actually happens — inboxes, chats, apps, databases.</p>
-            <ul class="chips">
-              <li><a class="chip chip--mine" href="https://unipile.com" target="_blank" rel="noopener">Unipile</a></li>
-              <li><a class="chip" href="https://airbyte.com" target="_blank" rel="noopener">Airbyte</a></li>
-              <li><a class="chip" href="https://composio.dev" target="_blank" rel="noopener">Composio</a></li>
-            </ul>
-          </li>
-          <li class="cstage">
-            <div class="cstage__head"><span class="cstage__num">02</span><span class="cstage__name">Curate</span></div>
-            <p class="cstage__desc">Keep the small part that matters and turn it into memory — extracted, deduped, ready to recall.</p>
-            <ul class="chips">
-              <li><a class="chip" href="https://mem0.ai" target="_blank" rel="noopener">Mem0</a></li>
-              <li><a class="chip chip--mine" href="https://supermemory.ai" target="_blank" rel="noopener">SuperMemory</a></li>
-              <li><a class="chip" href="https://getzep.com" target="_blank" rel="noopener">Zep</a></li>
-              <li><a class="chip" href="https://github.com/langchain-ai/langmem" target="_blank" rel="noopener">LangMem</a></li>
-            </ul>
-          </li>
-          <li class="cstage">
-            <div class="cstage__head"><span class="cstage__num">03</span><span class="cstage__name">Store</span></div>
-            <p class="cstage__desc">Hold the embeddings and documents somewhere any agent can reach in a single call.</p>
-            <ul class="chips">
-              <li><a class="chip" href="https://pinecone.io" target="_blank" rel="noopener">Pinecone</a></li>
-              <li><a class="chip" href="https://qdrant.tech" target="_blank" rel="noopener">Qdrant</a></li>
-              <li><a class="chip" href="https://weaviate.io" target="_blank" rel="noopener">Weaviate</a></li>
-              <li><a class="chip chip--mine" href="https://activeloop.ai" target="_blank" rel="noopener">Activeloop</a></li>
-            </ul>
-          </li>
-          <li class="cstage">
-            <div class="cstage__head"><span class="cstage__num">04</span><span class="cstage__name">Execute</span></div>
-            <p class="cstage__desc">Assemble the right context at the right moment and run the task on it.</p>
-            <ul class="chips">
-              <li><a class="chip" href="https://llamaindex.ai" target="_blank" rel="noopener">LlamaIndex</a></li>
-              <li><a class="chip" href="https://langchain.com/langgraph" target="_blank" rel="noopener">LangGraph</a></li>
-              <li><a class="chip" href="https://letta.com" target="_blank" rel="noopener">Letta</a></li>
-              <li><a class="chip" href="https://flueframework.com" target="_blank" rel="noopener">Flue</a></li>
-            </ul>
-          </li>
-          <li class="cstage cstage--loop">
-            <div class="cstage__head"><span class="cstage__num">05</span><span class="cstage__name">Experience</span></div>
-            <p class="cstage__desc">Whatever the agent does becomes a trace. The memory tools above write that outcome back — so the loop returns to capture, a little smarter each pass.</p>
-            <p class="cstage__return">&#8617; feeds back into <strong>01 Capture</strong></p>
-          </li>
-        </ol>
-      </div>
+      <article class="slide" id="pieces-3" data-chapter="pieces" aria-roledescription="slide" aria-label="Skills: how your business does things">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">04 · The pieces · Skills</p>
+            <h2 class="slide__head">Skills: how your business does things.</h2>
+            <p class="slide__sub">The repeatable procedures — how you quote, onboard, review, ship. Each one written plainly enough that an agent can follow it the same way every time.</p>
+          </div>
+          <div class="slide__art">
+            <svg viewBox="0 0 320 272" class="art art--three focus-2" role="img" aria-hidden="true">
+              <g class="piece piece-1"><rect x="20" y="14"  width="220" height="72" rx="10" fill="var(--color-slate)" /><text class="art-label" x="130" y="56" fill="var(--color-paper)">Memory</text></g>
+              <g class="piece piece-2"><rect x="20" y="102" width="220" height="72" rx="10" fill="var(--color-slate-2)" /><text class="art-label" x="130" y="144" fill="var(--color-paper)">Skills</text></g>
+              <g class="piece piece-3"><rect x="20" y="190" width="220" height="72" rx="10" fill="var(--color-clay)" /><text class="art-label" x="130" y="232" fill="var(--color-paper)">Software</text></g>
+            </svg>
+          </div>
+        </div>
+      </article>
 
-      <div class="layer">
-        <h3 class="layer__head"><span class="layer__tag">For yourself</span> The same loop, on top of the apps you already use</h3>
-        <p class="layer__note">
-          You don't need new software to start. If you already keep notes in Obsidian,
-          plain markdown, or Apple Notes, you have capture and store covered. The work
-          is laying a thin layer over them, so an agent can read what you know — and
-          write back to it.
-        </p>
-        <ol class="flow flow--personal">
-          <li><span>Capture</span> in plain markdown — one folder, so anything can read it.</li>
-          <li><span>Curate &amp; store</span> by pointing a memory tool like Mem0 or SuperMemory at that folder.</li>
-          <li><span>Execute</span> by giving your agent read access to the index it builds.</li>
-          <li><span>Experience</span> by saving what you learn back as notes — the loop closes, at the size of one person.</li>
-        </ol>
-      </div>
+      <article class="slide" id="pieces-4" data-chapter="pieces" aria-roledescription="slide" aria-label="Bespoke software: the tools only you have">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">04 · The pieces · Software</p>
+            <h2 class="slide__head">Bespoke software: the tools only you have.</h2>
+            <p class="slide__sub">Small custom tools your agents can call — built cheaply now that they write most of the code. Shaped to your workflow, not bought off a shelf everyone shares.</p>
+          </div>
+          <div class="slide__art">
+            <svg viewBox="0 0 320 272" class="art art--three focus-3" role="img" aria-hidden="true">
+              <g class="piece piece-1"><rect x="20" y="14"  width="220" height="72" rx="10" fill="var(--color-slate)" /><text class="art-label" x="130" y="56" fill="var(--color-paper)">Memory</text></g>
+              <g class="piece piece-2"><rect x="20" y="102" width="220" height="72" rx="10" fill="var(--color-slate-2)" /><text class="art-label" x="130" y="144" fill="var(--color-paper)">Skills</text></g>
+              <g class="piece piece-3"><rect x="20" y="190" width="220" height="72" rx="10" fill="var(--color-clay)" /><text class="art-label" x="130" y="232" fill="var(--color-paper)">Software</text></g>
+            </svg>
+          </div>
+        </div>
+      </article>
 
-      <div class="layer">
-        <h3 class="layer__head"><span class="layer__tag layer__tag--accent">Agents layer</span> What acts on the context</h3>
-        <ul class="cards">
-          <li class="card">
-            <h4 class="card__name">Greptile</h4>
-            <p class="card__desc">A code-review agent that reads the whole codebase, not just the diff. It catches the bugs that only show up once you know how the rest of the code is wired — the context layer made to act.</p>
-            <a class="card__link" href="https://greptile.com" target="_blank" rel="noopener">greptile.com &#8599;</a>
-          </li>
-        </ul>
-      </div>
-    </section>
+      <!-- ════ CHAPTER 5 · THE MOAT ═══════════════════════════ -->
 
-  </main>
+      <article class="slide" id="moat-1" data-chapter="moat" aria-roledescription="slide" aria-label="Organisations run on four levels">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">05 · The moat</p>
+            <h2 class="slide__head">Every organisation runs on four levels.</h2>
+            <p class="slide__sub">Culture at the top, then expertise, then written procedures, then software at the base. The lower it sits, the more explicit it is — and the cheaper it is to repeat.</p>
+          </div>
+          <div class="slide__art">
+            <svg viewBox="0 0 320 272" class="art art--pyramid" role="img" aria-hidden="true">
+              <g class="agentic"><rect x="150" y="20" width="22" height="230" rx="6" fill="var(--color-accent)" opacity="0.5" /></g>
+              <g class="up-arrow"><line x1="300" y1="240" x2="300" y2="40" stroke="var(--color-accent-ink)" stroke-width="3" /><path d="M294 56 L300 40 L306 56 Z" fill="var(--color-accent-ink)" /></g>
+              <g class="tier"><rect x="110" y="30"  width="100" height="44" rx="6" fill="var(--color-navy)" /><text class="art-label" x="160" y="58" fill="var(--color-paper)">Culture</text></g>
+              <g class="tier"><rect x="80"  y="82"  width="160" height="44" rx="6" fill="var(--color-slate-2)" /><text class="art-label" x="160" y="110" fill="var(--color-paper)">Expertise</text></g>
+              <g class="tier"><rect x="50"  y="134" width="220" height="44" rx="6" fill="var(--color-slate)" /><text class="art-label" x="160" y="162" fill="var(--color-paper)">SOPs</text></g>
+              <g class="tier"><rect x="20"  y="186" width="280" height="44" rx="6" fill="var(--color-clay)" /><text class="art-label" x="160" y="214" fill="var(--color-paper)">Software</text></g>
+            </svg>
+          </div>
+        </div>
+      </article>
 
-  <!-- ─── FOOTER · Ft5 statement ──────────────────────────── -->
-  <footer class="foot" data-reveal>
-    <hr class="stage__rule" />
-    <p class="foot__statement">
-      Don't hand AI to your old organisation.<br />Build a new one around it.
-    </p>
-    <p class="foot__meta">
-      <span>AI&#8202;·&#8202;Native</span>
-      <span>A field guide &#8212; 2026</span>
-    </p>
-  </footer>
+      <article class="slide" id="moat-2" data-chapter="moat" aria-roledescription="slide" aria-label="Push work up the pyramid for operating leverage">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">05 · The moat</p>
+            <h2 class="slide__head">Push work down the levels and you get leverage.</h2>
+            <p class="slide__sub">Turn what one expert knows into a written procedure, then into software. Each step makes the knowledge explicit, and the cost of doing it again falls towards nothing.</p>
+          </div>
+          <div class="slide__art">
+            <svg viewBox="0 0 320 272" class="art art--pyramid lift" role="img" aria-hidden="true">
+              <g class="agentic"><rect x="150" y="20" width="22" height="230" rx="6" fill="var(--color-accent)" opacity="0.5" /></g>
+              <g class="up-arrow"><line x1="300" y1="240" x2="300" y2="40" stroke="var(--color-accent-ink)" stroke-width="3" /><path d="M294 56 L300 40 L306 56 Z" fill="var(--color-accent-ink)" /></g>
+              <g class="tier"><rect x="110" y="30"  width="100" height="44" rx="6" fill="var(--color-navy)" /><text class="art-label" x="160" y="58" fill="var(--color-paper)">Culture</text></g>
+              <g class="tier"><rect x="80"  y="82"  width="160" height="44" rx="6" fill="var(--color-slate-2)" /><text class="art-label" x="160" y="110" fill="var(--color-paper)">Expertise</text></g>
+              <g class="tier"><rect x="50"  y="134" width="220" height="44" rx="6" fill="var(--color-slate)" /><text class="art-label" x="160" y="162" fill="var(--color-paper)">SOPs</text></g>
+              <g class="tier"><rect x="20"  y="186" width="280" height="44" rx="6" fill="var(--color-clay)" /><text class="art-label" x="160" y="214" fill="var(--color-paper)">Software</text></g>
+            </svg>
+          </div>
+        </div>
+      </article>
 
-  <script src="js/reveal.js"></script>
+      <article class="slide" id="moat-3" data-chapter="moat" aria-roledescription="slide" aria-label="Agents cut across every level">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">05 · The moat</p>
+            <h2 class="slide__head">Agents cut across every level.</h2>
+            <p class="slide__sub">The same agent can absorb your culture, apply expert judgement, follow the procedures and run the software. The clearer each level is written, the more of it an agent can carry.</p>
+          </div>
+          <div class="slide__art">
+            <svg viewBox="0 0 320 272" class="art art--pyramid cut" role="img" aria-hidden="true">
+              <g class="agentic"><rect x="150" y="20" width="22" height="230" rx="6" fill="var(--color-accent)" opacity="0.5" /></g>
+              <g class="up-arrow"><line x1="300" y1="240" x2="300" y2="40" stroke="var(--color-accent-ink)" stroke-width="3" /><path d="M294 56 L300 40 L306 56 Z" fill="var(--color-accent-ink)" /></g>
+              <g class="tier"><rect x="110" y="30"  width="100" height="44" rx="6" fill="var(--color-navy)" /><text class="art-label" x="160" y="58" fill="var(--color-paper)">Culture</text></g>
+              <g class="tier"><rect x="80"  y="82"  width="160" height="44" rx="6" fill="var(--color-slate-2)" /><text class="art-label" x="160" y="110" fill="var(--color-paper)">Expertise</text></g>
+              <g class="tier"><rect x="50"  y="134" width="220" height="44" rx="6" fill="var(--color-slate)" /><text class="art-label" x="160" y="162" fill="var(--color-paper)">SOPs</text></g>
+              <g class="tier"><rect x="20"  y="186" width="280" height="44" rx="6" fill="var(--color-clay)" /><text class="art-label" x="160" y="214" fill="var(--color-paper)">Software</text></g>
+            </svg>
+          </div>
+        </div>
+      </article>
+
+      <article class="slide" id="moat-4" data-chapter="moat" aria-roledescription="slide" aria-label="Coordination is a headwind that grows with headcount">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">05 · The moat</p>
+            <h2 class="slide__head">Every person you add is another bet that has to land.</h2>
+            <p class="slide__sub">A project only works if everyone invests the right effort at the right moment. Multiply those odds together and a team of brilliant, willing people still slows down &mdash; not from any single failure, but from the sheer maths of coordinating them all.</p>
+            <p class="slide__cite">Coordination dynamics adapted from Alex Komoroske, &ldquo;Coordination Headwind: How Organisations Are Like Slime Molds.&rdquo;</p>
+          </div>
+          <div class="slide__art">
+            <svg viewBox="0 0 320 272" class="art art--decay" role="img" aria-hidden="true">
+              <text class="art-label art-label--start" x="16" y="22">chance it all lands</text>
+              <line x1="14" y1="240" x2="306" y2="240" stroke="var(--color-rule)" stroke-width="2" />
+              <rect class="decaybar" x="30"  y="69"  width="44" height="171" rx="6" fill="var(--color-slate)" />
+              <rect class="decaybar" x="100" y="101" width="44" height="139" rx="6" fill="var(--color-slate-2)" />
+              <rect class="decaybar" x="170" y="132" width="44" height="108" rx="6" fill="var(--color-clay)" />
+              <rect class="decaybar" x="240" y="175" width="44" height="65"  rx="6" fill="var(--color-accent)" />
+              <text class="art-label" x="52"  y="262">1</text>
+              <text class="art-label" x="122" y="262">5</text>
+              <text class="art-label" x="192" y="262">10</text>
+              <text class="art-label" x="262" y="262">20</text>
+            </svg>
+          </div>
+        </div>
+      </article>
+
+      <article class="slide" id="moat-5" data-chapter="moat" aria-roledescription="slide" aria-label="Agents do not add the same coordination drag">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">05 · The moat</p>
+            <h2 class="slide__head">Agents don&rsquo;t add the same drag.</h2>
+            <p class="slide__sub">A fleet of agents shares one context, holds no competing priorities and never loses the thread between hand-offs. A small team that directs them keeps the odds high where a larger one would have bled them away. That is the real reason to stay lean.</p>
+          </div>
+          <div class="slide__art">
+            <svg viewBox="0 0 320 272" class="art art--decay" role="img" aria-hidden="true">
+              <text class="art-label art-label--start" x="16" y="22">chance it all lands</text>
+              <line x1="14" y1="240" x2="306" y2="240" stroke="var(--color-rule)" stroke-width="2" />
+              <rect class="decaybar" x="30"  y="69" width="44" height="171" rx="6" fill="var(--color-slate)" />
+              <rect class="decaybar" x="100" y="73" width="44" height="167" rx="6" fill="var(--color-slate-2)" />
+              <rect class="decaybar" x="170" y="77" width="44" height="163" rx="6" fill="var(--color-clay)" />
+              <rect class="decaybar" x="240" y="81" width="44" height="159" rx="6" fill="var(--color-accent)" />
+              <text class="art-label" x="52"  y="262">1</text>
+              <text class="art-label" x="122" y="262">5</text>
+              <text class="art-label" x="192" y="262">10</text>
+              <text class="art-label" x="262" y="262">20</text>
+            </svg>
+          </div>
+        </div>
+      </article>
+
+      <article class="slide" id="moat-6" data-chapter="moat" aria-roledescription="slide" aria-label="The moat is the loop, not the tool">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">05 · The moat</p>
+            <h2 class="slide__head">The moat is the loop, not the tool.</h2>
+            <p class="slide__sub">A tool can be bought tomorrow. A loop that turns every job into better memory, faster work and sharper signal compounds — and it does not snap back when a competitor copies your stack.</p>
+          </div>
+          <div class="slide__art">
+            <svg viewBox="0 0 320 320" class="art art--loop" role="img" aria-hidden="true">
+              <circle cx="160" cy="160" r="110" fill="none" stroke="var(--color-rule)" stroke-width="2" stroke-dasharray="4 8" />
+              <g class="loop-rot"><circle class="loop-pulse" cx="160" cy="50" r="9" fill="var(--color-accent)" /></g>
+              <g><circle cx="160" cy="50"  r="22" fill="var(--color-slate)" /><text class="art-label" x="160" y="30">System</text></g>
+              <g><circle cx="255" cy="215" r="22" fill="var(--color-slate-2)" /><text class="art-label" x="255" y="262">Speed</text></g>
+              <g><circle cx="65"  cy="215" r="22" fill="var(--color-clay)" /><text class="art-label" x="65" y="262">Signal</text></g>
+            </svg>
+          </div>
+        </div>
+      </article>
+
+      <article class="slide" id="moat-7" data-chapter="moat" aria-roledescription="slide" aria-label="Four things stay scarce">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">05 · The moat</p>
+            <h2 class="slide__head">When intelligence is cheap, four things stay scarce.</h2>
+            <p class="slide__sub">Context about your world, the attention to point it well, the trust of the people you serve, and a brand they remember. Models do not hand you any of these.</p>
+          </div>
+          <div class="slide__art">
+            <svg viewBox="0 0 320 272" class="art art--scarce-bars" role="img" aria-hidden="true">
+              <line x1="14" y1="240" x2="306" y2="240" stroke="var(--color-rule)" stroke-width="2" />
+              <rect x="30"  y="112" width="44" height="128" rx="6" fill="var(--color-slate)" />
+              <rect x="100" y="82"  width="44" height="158" rx="6" fill="var(--color-slate-2)" />
+              <rect x="170" y="100" width="44" height="140" rx="6" fill="var(--color-clay)" />
+              <rect x="240" y="70"  width="44" height="170" rx="6" fill="var(--color-accent)" />
+              <text class="art-label" x="52"  y="262">Context</text>
+              <text class="art-label" x="122" y="262">Attention</text>
+              <text class="art-label" x="192" y="262">Trust</text>
+              <text class="art-label" x="262" y="262">Brand</text>
+            </svg>
+          </div>
+        </div>
+      </article>
+
+      <!-- ════ CHAPTER 6 · START ══════════════════════════════ -->
+
+      <article class="slide" id="start-1" data-chapter="start" aria-roledescription="slide" aria-label="Everyone becomes a manager of agents">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">06 · Start</p>
+            <h2 class="slide__head">Everyone becomes a manager of agents.</h2>
+            <p class="slide__sub">Your job shifts from doing the work to directing it — setting context, choosing what matters, judging the output. Less typing, more deciding.</p>
+          </div>
+          <div class="slide__art">
+            <svg viewBox="0 0 320 272" class="art art--manager" role="img" aria-hidden="true">
+              <circle cx="160" cy="64" r="34" fill="var(--color-navy)" />
+              <text class="art-label" x="160" y="120">you</text>
+              <line x1="160" y1="100" x2="70"  y2="180" stroke="var(--color-ink-3)" stroke-width="3" />
+              <line x1="160" y1="100" x2="160" y2="180" stroke="var(--color-ink-3)" stroke-width="3" />
+              <line x1="160" y1="100" x2="250" y2="180" stroke="var(--color-ink-3)" stroke-width="3" />
+              <rect x="48"  y="184" width="44" height="44" rx="8" fill="var(--color-slate)" />
+              <rect x="138" y="184" width="44" height="44" rx="8" fill="var(--color-slate-2)" />
+              <rect x="228" y="184" width="44" height="44" rx="8" fill="var(--color-clay)" />
+              <text class="art-label" x="160" y="252">agents</text>
+            </svg>
+          </div>
+        </div>
+      </article>
+
+      <article class="slide" id="start-2" data-chapter="start" aria-roledescription="slide" aria-label="Feed the context loop">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">06 · Start</p>
+            <h2 class="slide__head">Feed the context loop.</h2>
+            <p class="slide__sub">Every note you capture, every decision you record, makes tomorrow&rsquo;s agents better. The work and the memory are the same act — do it once, reuse it forever.</p>
+          </div>
+          <div class="slide__art">
+            <svg viewBox="0 0 320 320" class="art art--loop" role="img" aria-hidden="true">
+              <circle cx="160" cy="160" r="110" fill="none" stroke="var(--color-rule)" stroke-width="2" stroke-dasharray="4 8" />
+              <g class="loop-rot"><circle class="loop-pulse" cx="160" cy="50" r="9" fill="var(--color-accent)" /></g>
+              <g><circle cx="160" cy="50"  r="22" fill="var(--color-slate)" /><text class="art-label" x="160" y="30">Capture</text></g>
+              <g><circle cx="255" cy="215" r="22" fill="var(--color-slate-2)" /><text class="art-label" x="255" y="262">Reuse</text></g>
+              <g><circle cx="65"  cy="215" r="22" fill="var(--color-clay)" /><text class="art-label" x="65" y="262">Refine</text></g>
+            </svg>
+          </div>
+        </div>
+      </article>
+
+      <article class="slide" id="start-3" data-chapter="start" aria-roledescription="slide" aria-label="Start with what you already use">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">06 · Start</p>
+            <h2 class="slide__head">Start with what you already use.</h2>
+            <p class="slide__sub">No platform to buy. A folder of plain notes — markdown, Obsidian, whatever you have — is enough to begin building the memory layer today.</p>
+          </div>
+          <div class="slide__art">
+            <svg viewBox="0 0 320 272" class="art art--folder" role="img" aria-hidden="true">
+              <rect x="60" y="36" width="200" height="210" rx="10" fill="var(--color-paper-2)" stroke="var(--color-rule)" stroke-width="2" />
+              <text class="art-label art-label--start" x="84" y="80" fill="var(--color-accent-ink)" style="font-size:18px">#</text>
+              <rect class="mdline" x="108" y="68"  width="120" height="10" rx="5" fill="var(--color-ink-3)" />
+              <rect class="mdline" x="84"  y="104" width="150" height="9" rx="4.5" fill="var(--color-slate)" />
+              <rect class="mdline" x="84"  y="134" width="130" height="9" rx="4.5" fill="var(--color-slate)" />
+              <rect class="mdline" x="84"  y="164" width="146" height="9" rx="4.5" fill="var(--color-slate)" />
+            </svg>
+          </div>
+        </div>
+      </article>
+
+      <article class="slide" id="start-4" data-chapter="start" aria-roledescription="slide" aria-label="Aim at a North Star and move in safe steps">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">06 · Start</p>
+            <h2 class="slide__head">Aim at a North Star. Move in safe steps.</h2>
+            <p class="slide__sub">Don&rsquo;t bet everything on one giant leap. Fix a direction worth years of work, then take the next small step that clearly pays for itself. Each one locks in value and teaches you the ground before you commit to the next.</p>
+          </div>
+          <div class="slide__art">
+            <svg viewBox="0 0 320 272" class="art art--ladder" role="img" aria-hidden="true">
+              <circle cx="270" cy="46" r="13" fill="var(--color-accent)" />
+              <line x1="48" y1="230" x2="256" y2="60" stroke="var(--color-rule)" stroke-width="2" stroke-dasharray="2 9" />
+              <g class="rungs" stroke="var(--color-slate-2)" stroke-width="4" stroke-linecap="round" fill="none">
+                <line class="rung" x1="48"  y1="230" x2="100" y2="204" />
+                <line class="rung" x1="100" y1="204" x2="152" y2="178" />
+                <line class="rung" x1="152" y1="178" x2="204" y2="152" />
+                <line class="rung" x1="204" y1="152" x2="246" y2="74"  />
+              </g>
+              <g fill="var(--color-clay)">
+                <circle class="node" cx="48"  cy="230" r="6" />
+                <circle class="node" cx="100" cy="204" r="6" />
+                <circle class="node" cx="152" cy="178" r="6" />
+                <circle class="node" cx="204" cy="152" r="6" />
+              </g>
+              <text class="art-label" x="270" y="84">North Star</text>
+            </svg>
+          </div>
+        </div>
+      </article>
+
+      <article class="slide slide--solo" id="start-5" data-chapter="start" aria-roledescription="slide" aria-label="Build a new organisation around AI">
+        <div class="slide__inner">
+          <div class="slide__text">
+            <p class="slide__kicker">06 · Start</p>
+            <h2 class="slide__head">Don&rsquo;t hand AI to your old organisation. Build a new one around it.</h2>
+            <p class="slide__sub">The motor only paid off when the factory was redrawn around it. Same moment, same move. Start with one process, write it down, and let the loop compound.</p>
+            <a class="slide__cta" href="index-scroll.html">See the tools, step by step <span aria-hidden="true">&rarr;</span></a>
+            <p class="slide__cite">Framework adapted in part from Taylor Pearson, &ldquo;A Lever Made of Agents.&rdquo;</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLOT: more chapters / slides drop in here as content arrives. -->
+
+      <button class="edge-hint" type="button" aria-label="Next page" tabindex="-1"></button>
+    </main>
+
+    <!-- ─── CONTROLS ─────────────────────────────────────────── -->
+    <footer class="controls">
+      <button class="ctrl ctrl--prev" type="button" aria-label="Previous page">&#8592;</button>
+      <div class="dots" role="tablist" aria-label="Pages in this chapter"></div>
+      <button class="ctrl ctrl--next" type="button" aria-label="Next page">&#8594;</button>
+      <p class="counter" aria-hidden="true"></p>
+    </footer>
+  </div>
+
+  <!-- polite announcer for screen readers -->
+  <p class="sr-only" id="live" aria-live="polite"></p>
+
+  <script src="js/guide.js"></script>
   <script src="js/parallax.js"></script>
 </body>
 </html>
